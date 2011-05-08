@@ -8,6 +8,8 @@ class CreateAssignments < ActiveRecord::Migration
       t.text :description
       t.date :due_date
 
+      t.boolean :test
+
       t.timestamps
     end
     add_index("assignments","course_id")

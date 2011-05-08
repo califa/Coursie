@@ -12,6 +12,7 @@ class CreateCourses < ActiveRecord::Migration
       t.integer :duration
       t.string :place
 
+      t.boolean :open
 
       t.timestamps
     end

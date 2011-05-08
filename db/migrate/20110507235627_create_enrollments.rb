@@ -11,7 +11,6 @@ class CreateEnrollments < ActiveRecord::Migration
     end
     add_index("enrollments","student_id")
     add_index("enrollments","course_id")
-    add_index("enrollments","assignment_status_id")
   end
 
   def self.down

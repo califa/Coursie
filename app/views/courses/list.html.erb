@@ -1,0 +1,28 @@
+<% @page_title = "Courses List" %>
+
+<div class="course list">
+  <h2>Courses</h2>
+  
+  <%= link_to("Add New Course", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Course list">
+    <tr class="header">
+      <th>Course</th>
+      <th>Open?</th>
+      <th>Students</th>
+      <th>Actions</th>
+    </tr>
+    <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td class="center"><%= status_tag(course.open) %></td>
+      <td class="center"><%= course.enrollments.size %></td>
+      <td class="actions">
+        <%= link_to("View Sections", {:controller => 'sections', :action => 'list', :course_id => course.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => course.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => course.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
