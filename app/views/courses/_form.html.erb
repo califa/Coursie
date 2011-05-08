@@ -3,7 +3,7 @@
 <table summary="Page form fields">
   <tr>
     <th><%= f.label(:teacher_id, "Teacher") %></th>
-    <td><%= f.select(:teacher_id, @teachers.collect {|teacher| [teacher.list_name, teacher.id]}) %></td>
+    <td><%= f.select(:teacher_id, @teachers.collect {|teacher| [teacher.list_name, teacher.id]}, :allow_blank => true) %></td>
   </tr>
   <tr>
     <th><%= f.label(:name, "Course Name") %></th>
@@ -19,11 +19,11 @@
   </tr>
   <tr>
     <th><%= f.label(:time, "Starting Time") %></th>
-    <td><%= f.time_select(:time, :include_seconds => false, :minute_step => 5, :include_blank => 0, :time_separator => ":" %></td>
+    <td><%= f.select(:time_hours, (0..23).map do |x| format("%02d", x) end ) %> : <%= f.select(:time_minutes, (00..59).step(5).map do |x| format("%02d", x) end ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:duration, "Duration") %></th>
-    <td><%= f.time_select(:duration, :include_seconds => false, :minute_step => 5, :include_blank => 0, :time_separator => ":" %></td>
+    <td><%= f.select(:duration_hours, (0..5).map do |x| format("%02d", x) end ) %> : <%= f.select(:duration_minutes, (00..59).step(5).map do |x| format("%02d", x) end ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:open) %></th>

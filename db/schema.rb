@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20110507235645) do
     t.string   "title"
     t.text     "description"
     t.date     "due_date"
+    t.boolean  "test"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,9 +52,10 @@ ActiveRecord::Schema.define(:version => 20110507235645) do
     t.string   "name"
     t.text     "description"
     t.string   "day"
-    t.integer  "time"
-    t.integer  "duration"
+    t.string   "time"
+    t.string   "duration"
     t.string   "place"
+    t.boolean  "open"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

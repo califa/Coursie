@@ -24,46 +24,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="courses_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/courses_controller.rb">
+      <file leaf-file-name="course.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/course.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="46" selection-start="778" selection-end="778" vertical-scroll-proportion="-13.384615">
+            <state line="5" column="2" selection-start="107" selection-end="151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/courses/_form.html.erb">
+      <file leaf-file-name="student.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/student.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="25" selection-start="1150" selection-end="1150" vertical-scroll-proportion="-16.0">
+            <state line="3" column="19" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delete.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/courses/delete.html.erb">
+      <file leaf-file-name="assignment.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/assignment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="-0.0">
+            <state line="4" column="2" selection-start="94" selection-end="149" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/courses/list.html.erb">
+      <file leaf-file-name="enrollment.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/enrollment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/courses/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
+            <state line="5" column="23" selection-start="137" selection-end="137" vertical-scroll-proportion="0.07874016">
               <folding />
             </state>
           </provider>
@@ -72,7 +63,16 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/courses/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="49" selection-start="99" selection-end="99" vertical-scroll-proportion="-1.1428572">
+            <state line="30" column="30" selection-start="674" selection-end="674" vertical-scroll-proportion="-17.142857">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/courses/list.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="98" selection-start="479" selection-end="479" vertical-scroll-proportion="-9.142858">
               <folding />
             </state>
           </provider>
@@ -81,34 +81,34 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/courses/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.0">
+            <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/admin.rb">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/courses/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="2" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+            <state line="21" column="76" selection-start="876" selection-end="876" vertical-scroll-proportion="-12.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20110507235635_create_courses.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20110507235635_create_courses.rb">
+      <file leaf-file-name="application_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="261" selection-end="261" vertical-scroll-proportion="0.20472442">
+            <state line="2" column="2" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20110507235641_create_assignments.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20110507235641_create_assignments.rb">
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="21" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+            <state line="5" column="14" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -128,22 +128,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/assignment_status.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20110507235645_create_assignment_statuses.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20110507235627_create_enrollments.rb" />
-        <option value="$PROJECT_DIR$/app/models/course.rb" />
-        <option value="$PROJECT_DIR$/app/models/admin.rb" />
-        <option value="$PROJECT_DIR$/app/models/student.rb" />
-        <option value="$PROJECT_DIR$/app/models/teacher.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/courses_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/courses_controller.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20110507235641_create_assignments.rb" />
-        <option value="$PROJECT_DIR$/app/views/courses/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/courses/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/courses/list.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20110507235635_create_courses.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/courses/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/courses/delete.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/courses/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/courses/_form.html.erb" />
-        <option value="$PROJECT_DIR$/db/migrate/20110507235635_create_courses.rb" />
+        <option value="$PROJECT_DIR$/app/views/courses/list.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/course.rb" />
+        <option value="$PROJECT_DIR$/app/models/student.rb" />
+        <option value="$PROJECT_DIR$/app/models/assignment.rb" />
+        <option value="$PROJECT_DIR$/app/models/enrollment.rb" />
       </list>
     </option>
   </component>
@@ -276,6 +276,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="courses" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -309,6 +331,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,6 +449,31 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda">
@@ -614,98 +679,63 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/assignment_status.rb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/courses_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="94" selection-end="94" vertical-scroll-proportion="0.046035804">
+        <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/enrollment.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20110507235635_create_courses.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="10" selection-start="92" selection-end="92" vertical-scroll-proportion="0.059850372">
+        <state line="10" column="14" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/assignment.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="10" selection-start="70" selection-end="70" vertical-scroll-proportion="0.04488778">
+        <state line="21" column="10" selection-start="485" selection-end="485" vertical-scroll-proportion="-12.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/course.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/courses/delete.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="40" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/student.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="112" selection-end="167" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/teacher.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="5" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
+        <state line="0" column="42" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/courses_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="46" selection-start="778" selection-end="778" vertical-scroll-proportion="-13.384615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20110507235641_create_assignments.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/admin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="2" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/courses/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="49" selection-start="99" selection-end="99" vertical-scroll-proportion="-1.1428572">
+        <state line="54" column="22" selection-start="1229" selection-end="1229" vertical-scroll-proportion="-19.153847">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/courses/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/courses/list.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+        <state line="2" column="2" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="14" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/courses/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/courses/delete.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
           <folding />
@@ -714,14 +744,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/courses/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="25" selection-start="1150" selection-end="1150" vertical-scroll-proportion="-16.0">
+        <state line="21" column="76" selection-start="876" selection-end="876" vertical-scroll-proportion="-12.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20110507235635_create_courses.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/courses/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="261" selection-end="261" vertical-scroll-proportion="0.20472442">
+        <state line="30" column="30" selection-start="674" selection-end="674" vertical-scroll-proportion="-17.142857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/courses/list.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="98" selection-start="479" selection-end="479" vertical-scroll-proportion="-9.142858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/course.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="2" selection-start="107" selection-end="151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/student.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/assignment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="2" selection-start="94" selection-end="149" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/enrollment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="137" selection-end="137" vertical-scroll-proportion="0.07874016">
           <folding />
         </state>
       </provider>

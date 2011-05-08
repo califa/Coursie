@@ -14,11 +14,12 @@
     </tr>
     <% @courses.each do |course| %>
     <tr>
-      <td><%= course.name %></td>
+      <td><%= link_to(course.name, {:action => 'show', :id => course.id}, :class => 'action show') %></td>
       <td class="center"><%= status_tag(course.open) %></td>
       <td class="center"><%= course.enrollments.size %></td>
       <td class="actions">
-        <%= link_to("View Sections", {:controller => 'sections', :action => 'list', :course_id => course.id}, :class => 'action show') %>
+        <%= link_to("Enrollments", {:controller => 'enrollments', :action => 'list', :course_id => course.id}, :class => 'action show') %>
+        <%= link_to("Assignments", {:controller => 'assignments', :action => 'list', :course_id => course.id}, :class => 'action show') %>
         <%= link_to("Edit", {:action => 'edit', :id => course.id}, :class => 'action edit') %>
         <%= link_to("Delete", {:action => 'delete', :id => course.id}, :class => 'action delete') %>
       </td>

@@ -1,2 +1,5 @@
 module CoursesHelper
+
+
+
 end

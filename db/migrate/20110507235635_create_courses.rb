@@ -8,8 +8,8 @@ class CreateCourses < ActiveRecord::Migration
       t.text :description
 
       t.string :day
-      t.integer :time
-      t.integer :duration
+      t.string :time, :is => 4
+      t.string :duration, :is => 4
       t.string :place
 
       t.boolean :open

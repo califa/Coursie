@@ -63,4 +63,8 @@ class CoursesController < ApplicationController
     redirect_to(:action => 'list')
   end
 
+  private
+
+
+
 end
