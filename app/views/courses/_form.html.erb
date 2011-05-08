@@ -1,6 +1,6 @@
 <%= error_messages_for(@courses) %>
 
-<table summary="Page form fields">
+<table summary="Course form fields">
   <tr>
     <th><%= f.label(:teacher_id, "Teacher") %></th>
     <td><%= f.select(:teacher_id, @teachers.collect {|teacher| [teacher.list_name, teacher.id]}, :allow_blank => true) %></td>

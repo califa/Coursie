@@ -1,4 +1,4 @@
-class Teacher < ActiveRecord::Base
+class Teacher < User
 
   has_many :courses
 

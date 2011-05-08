@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
     if @course.save
       # If save succeeds, redirect to the list action
       flash[:notice] = "Course created."
-      redirect_to(:action => 'list')
+      redirect_to(course_path)
     else
       @teachers = Teacher.order('last_name ASC')
       render('new')
@@ -45,7 +45,7 @@ class CoursesController < ApplicationController
     if @course.update_attributes(params[:course])
       # If update succeeds, redirect to the list action
       flash[:notice] = "Course updated."
-      redirect_to(:action => 'show', :id => @course.id)
+      redirect_to(course_path(@course.id))
     else
       # If save fails, redisplay the form so user can fix problems
       @teachers = Teacher.order('last_name ASC')
@@ -60,7 +60,7 @@ class CoursesController < ApplicationController
   def destroy
     Course.find(params[:id]).destroy
     flash[:notice] = "Course destroyed."
-    redirect_to(:action => 'list')
+    redirect_to(course_path)
   end
 
   private

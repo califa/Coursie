@@ -1,0 +1,6 @@
+
+module UserClass
+
+
+
+end
