@@ -1,7 +1,7 @@
 class AccessController < ApplicationController
   
 
-  before_filter :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+  before_filter :confirm_logged_in, :except => [:login, :create, :logout]
   
   def index
     menu
@@ -21,6 +21,7 @@ class AccessController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:email] = authorized_user.email
+      session[:role] = authorized_user.type
       flash[:notice] = "You are now logged in."
       redirect_to(:action => 'index')
     else

@@ -14,6 +14,13 @@ class User < ActiveRecord::Base
   before_save :create_hashed_password
   after_save :clear_password
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def list_name
+    "#{last_name}, #{first_name}"
+  end
 
   def self.inherited(child)
     child.instance_eval do

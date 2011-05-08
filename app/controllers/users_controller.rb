@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def list
-    @users = User.sorted
+    @users = User.all
   end
 
   def new

@@ -2,9 +2,10 @@
 
 <div class="menu">
   <h2>Admin Menu</h2>
-  <div class="identity">Logged in as: <%= session[:username] %></div>
+  <div class="identity">Logged in as: <%= session[:role] %></div>
   <ul>
-    <li><%= link_to("Manage Users", users) %>
+    <li><%= link_to("Manage Users", users_path) %></li>
+    <li><%= link_to("Manage Courses", courses_path) %></li>
     <li><%= link_to("Logout", :action => 'logout') %></li>
   </ul> 
 </div>

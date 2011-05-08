@@ -1,5 +1,5 @@
 Lms::Application.routes.draw do
-  resources :elections
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,17 +56,24 @@ Lms::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  #match ':controller(/:action(/:id(.:format)))'
 
-  resources :access do
-    member do
-      get :index
-      get :show
-      get :menu
-      post :login
-      post :create
-    end
-  end
+  match 'access' => 'access#index'
+  match 'access/index' => 'access#index'
+  match 'access/menu' => 'access#menu'
+  match 'access/create' => 'access#create'
+  match 'access/logout' => 'access#logout'
+  match 'access/login' => 'access#login'
+
+#  resources :access do
+#    member do
+#      get :index
+#      get :show
+#      get :menu
+#      post :login
+#      post :create
+#    end
+#  end
 
   resources :users do
     get :delete, :on => :member
