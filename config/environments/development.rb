@@ -22,5 +22,9 @@ Lms::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  %w[user admin teacher student].each do |c|
+  require_dependency File.join("app","models","#{c}.rb")
+end
 end
 

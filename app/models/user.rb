@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User  < ActiveRecord::Base
 
   attr_accessor :password
 
@@ -11,8 +11,43 @@ class User < ActiveRecord::Base
 
   validates_length_of :password, :within => 8..25, :on => :create
 
+  validate :validates_email
+
+    def validates_email
+      errors.add_to_base "That email address is taken" if User.find_by_email(self.email)
+    end
+
   before_save :create_hashed_password
   after_save :clear_password
+
+  scope :sorted_by_type, order("users.type ASC, users.last_name ASC, users.first_name ASC")
+
+  attr_protected :hashed_password, :salt
+
+
+#  @child_classes = ["Admin", "Teacher", "Student"]
+
+#  def self.inherited(child)
+#    @child_classes << child
+#    super # important!
+#  end
+#
+#  def self.child_classes
+#    @child_classes
+#  end
+
+#  def self.inherited(child)
+#    child.instance_eval do
+#      def model_name
+#        self.model_name
+#      end
+#    end
+#    super
+#  end
+#
+#  def self.select_options
+#    subclasses.map{ |c| c.to_s }.sort
+#  end
 
   def name
     "#{first_name} #{last_name}"
@@ -22,14 +57,14 @@ class User < ActiveRecord::Base
     "#{last_name}, #{first_name}"
   end
 
-  def self.inherited(child)
-    child.instance_eval do
-      def model_name
-        User.model_name
-      end
-    end
-    super
-  end
+#  def self.inherited(child)
+#    child.instance_eval do
+#      def model_name
+#        User.model_name
+#      end
+#    end
+#    super
+#  end
 
   def self.authenticate(email="", password="")
     user = self.find_by_email(email)
@@ -69,4 +104,10 @@ class User < ActiveRecord::Base
     self.password = nil
   end
 
+
+  private
+
+  def attributes_protected_by_default
+    super - [self.class.type]
+  end
 end

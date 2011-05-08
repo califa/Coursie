@@ -8,19 +8,35 @@ class UsersController < ApplicationController
   end
   
   def list
-    @users = User.all
+    @users = User.sorted_by_type
   end
 
   def new
     @user = User.new
+#    @possible_classes = User.child_classes
   end
-  
+
+#  def new_admin
+#    @user = Admin.new
+#  end
+#
+#  def new_teacher
+#    @user = Teacher.new
+#  end
+#
+#  def new_student
+#    @user = Student.new
+#  end
+
   def create
+
     @user = User.new(params[:user])
+    @user.type = params[:user].delete(:type)
     if @user.save
-      flash[:notice] = 'User user created.'
+      flash[:notice] = "#{params[:type]} user created."
       redirect_to(users_path)
     else
+#      @possible_classes = User.child_classes
       render("new")
     end
   end
@@ -32,9 +48,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:notice] = 'User user updated.'
+      flash[:notice] = 'User updated.'
       redirect_to(users_path)
     else
+#      @possible_classes = User.child_classes
       render("edit")
     end
   end
@@ -45,7 +62,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:notice] = "User user destroyed."
+    flash[:notice] = "User destroyed."
     redirect_to(users_path)
   end
   

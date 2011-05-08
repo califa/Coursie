@@ -21,7 +21,7 @@ class AccessController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:email] = authorized_user.email
-      session[:role] = authorized_user.type
+      session[:type] = authorized_user.type
       flash[:notice] = "You are now logged in."
       redirect_to(:action => 'index')
     else
@@ -33,6 +33,7 @@ class AccessController < ApplicationController
   def logout
     session[:user_id] = nil
     session[:email] = nil
+    session[:type] = nil
     flash[:notice] = "You have been logged out."
     redirect_to(:action => "login")
   end

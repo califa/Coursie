@@ -77,10 +77,13 @@ Lms::Application.routes.draw do
 
   resources :users do
     get :delete, :on => :member
+    post :new_admin, :on => :member
+    post :new_teacher, :on => :member
+    post :new_student, :on => :member
   end
 
   resources :courses do
-    get :delete, :on => :member
+    delete :delete, :on => :member
 
   end
 

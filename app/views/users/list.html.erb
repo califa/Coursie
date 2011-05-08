@@ -11,12 +11,14 @@
   
   <table class="listing" summary="Users list">
     <tr>
+      <th>Class</th>
       <th>Email</th>
       <th>Name</th>
       <th>Actions</th>
     </tr>
     <% @users.each do |user| %>
     <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= user.class %></td>
       <td><%= user.email %></td>
       <td><%= user.name %></td>
       <td class="actions">
