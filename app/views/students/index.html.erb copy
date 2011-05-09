@@ -1,3 +1,26 @@
+<ul>
+<% homework = [] %>
+    <% @student.courses.each do |course| %>
+    <% course.assignments.each do |assignment| %>
+       <% homework << {"class" => course.name, "title" => assignment.title, "due" => assignment.due_date} %>
+    <% end %>
+    <% end %>
+
+
+  <% homework.each do |hw| %>
+      <% hw.each do |h,w| %>
+        <%= w %> ++++
+      <%end %>     <br/>
+  <%end %>
+
+
+   <% homework.each do |hw| %>
+      <%= hw['title'] %><br />
+  <%end %>
+</ul>
+
+
+
 
     <section class="section_todo">
 		<hgroup>
@@ -59,32 +82,66 @@
         <h1>Calendar</h1>
         <a href="#" class="settings">Settings</a>
         <div class="section_container">
-			<!--<table>-->
-				<!--<tr>-->
-					<!--<td>Exams/Quizes</td>-->
-					<!--<td>Completed Homework</td>-->
-				<!--</tr>-->
-				<!--<tr>-->
-					<!--<td>School Alerts</td>-->
-					<!--<td>Incomplete Homework</td>-->
-				<!--</tr>-->
-			<!--</table>-->
+			<table>
+				<tr>
+					<td>Exams/Quizes</td>
+					<td>Completed Homework</td>
+				</tr>
+				<tr>
+					<td>School Alerts</td>
+					<td>Incomplete Homework</td>
+				</tr>
+			</table>
             <!-- Month navigation -->
             <nav>
                 <button type="button" name="prev">Prev</button>
                 <span class="month">Feb 2011.</span>
                 <button type="button" name="next">Next</button>
             </nav>
-            <%= calendar_for(@tasks) do |t| %>
-              <%= t.head('sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat') %>
-              <%= t.day do |day, tasks| %>
-                <% day.day %>
-                <% tasks.each do |task, type| %>
-                  <div class="task"><%= h(task.name) %></div>
-                <% end %>
-              <% end %>
-            <% end %>
-
+            <ul class="calendar_widget">
+				<li class="calendar_header">mon</li>
+				<li class="calendar_header">tue</li>
+				<li class="calendar_header">wed</li>
+				<li class="calendar_header">thu</li>
+				<li class="calendar_header">fri</li>
+				<li class="calendar_header">sat</li>
+				<li class="calendar_header">sun</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li class="today"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 			<div class="clear"></div>
     </div>
    <div class="more">
@@ -97,9 +154,13 @@
         <div class="section_container">
             <nav>
                 <ul class="stripelist">
-                   <% @student.courses.each do |course| %>
-                    <li><a href="#"><%= course.name %></a></li>
-                   <% end %>
+                    <li><a href="#">Creative Computing</a></li>
+                    <li><a href="#">CRW 2</a></li>
+                    <li><a href="#">Databases</a></li>
+                    <li class="selected"><a href="#">Entrepreneurship</a></li>
+                    <li><a href="#">PWAD 2</a></li>
+                    <li><a href="#">Time: Core Lab</a></li>
+                    <li><a href="#">Time: Core Studio</a></li>
                 </ul>
             </nav>
 

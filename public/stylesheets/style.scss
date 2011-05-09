@@ -194,49 +194,85 @@ header {
 	nav {
 		margin:auto;
 	}
-	ul.calendar_widget {
-		li {
-		float:left;
-		width: 40px;
-		height: 40px;
+	table {
 
 
+        tr {
 		// Checkers Coloring
 		background: $list1;
-		&:nth-child(even) {
-				background:$list2;
-		}
+            text-align: center;
+            &:nth-child(even) {
+                    td {
+                        &:nth-child(even) {
+                            background:$list2;
+                        }
+                    }
+                }
+            &:nth-child(odd) {
+                    td {
+                        &:nth-child(odd) {
+                            background:$list2;
+                        }
+                    }
+                }
 
-		// Rounded Corners
-		&:nth-child(1) {
-				@include border-radius(5px,0,0,0)
-			}
-		&:nth-child(7) {
-				@include border-radius(0,5px,0,0)
-			}
-		&:nth-child(35) {
-				@include border-radius(0,0,5px,0)
-			}
-		&:nth-child(29) {
-				@include border-radius(0,0,0,5px);
-			}
+            // Rounded Corners
+            &:nth-child(1) {
+                    td {
+                        &:nth-child(1) {
+                            @include border-radius(5px,0,0,0);
+                        }
+                        &:nth-child(7) {
+                            @include border-radius(0,5px,0,0);
+                        }
+                    }
+                }
+            &:nth-child(5) {
+                    td {
 
-		// Today
-		&.today {
-			width: 32px;
-			height: 32px;
-			border: 4px solid $red;
-		}
+                        &:nth-child(1) {
+                            @include border-radius(0,0,0,5px);
+                        }
+                        &:nth-child(7) {
+                            @include border-radius(0,0,5px,0)
+                        }
+                    }
+                }
 
-		&.calendar_header {
-			height:10px;
-			font: 8px helvetica, arial, sans-serif;
-			text-transform: uppercase;
-			text-align: center;
-			background: #fff;
-		}
-	}
 
+            // Today
+            td {
+                width: 32px;
+                height: 32px;
+                overflow:hidden;
+                padding: 4px;
+                &.today {
+                    width: 32px;
+                    height: 32px;
+                    border: 4px solid $red;
+                }
+             }
+
+             div.task {
+                @include border-radius(5px,5px,5px,5px);
+                float:right;
+                margin:2px;
+                width:7px;
+                height:7px;
+                background:#b83113;
+                overflow:hidden;
+                text-indent: -9999px;
+             }
+
+        }
+
+        thead tr {
+                height:10px;
+                font: 8px helvetica, arial, sans-serif;
+                text-transform: uppercase;
+                text-align: center;
+                background: #fff;
+            }
 	}
 
 }

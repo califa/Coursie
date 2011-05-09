@@ -8,7 +8,7 @@ class Course < ActiveRecord::Base
   attr_accessor :time_hours, :time_minutes, :duration_hours, :duration_minutes
 
   before_validation :get_time_and_duration
-  before_save :capitalize_name
+ # before_save :capitalize_name
 
   validates_presence_of :name
   validates_length_of :name, :within => 3..255

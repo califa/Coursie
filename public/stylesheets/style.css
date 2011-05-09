@@ -147,39 +147,55 @@ header {
     margin: auto; }
   .section_calendar nav {
     margin: auto; }
-  .section_calendar ul.calendar_widget li {
-    float: left;
-    width: 40px;
-    height: 40px;
-    background: #f5f3ea; }
-    .section_calendar ul.calendar_widget li:nth-child(even) {
+  .section_calendar table tr {
+    background: #f5f3ea;
+    text-align: center; }
+    .section_calendar table tr:nth-child(even) td:nth-child(even) {
       background: #e8e6db; }
-    .section_calendar ul.calendar_widget li:nth-child(1) {
+    .section_calendar table tr:nth-child(odd) td:nth-child(odd) {
+      background: #e8e6db; }
+    .section_calendar table tr:nth-child(1) td:nth-child(1) {
       border-radius: 5px 0 0 0;
       -moz-border-radius: 5px 0 0 0;
       -webkit-border-radius: 5px 0 0 0; }
-    .section_calendar ul.calendar_widget li:nth-child(7) {
+    .section_calendar table tr:nth-child(1) td:nth-child(7) {
       border-radius: 0 5px 0 0;
       -moz-border-radius: 0 5px 0 0;
       -webkit-border-radius: 0 5px 0 0; }
-    .section_calendar ul.calendar_widget li:nth-child(35) {
-      border-radius: 0 0 5px 0;
-      -moz-border-radius: 0 0 5px 0;
-      -webkit-border-radius: 0 0 5px 0; }
-    .section_calendar ul.calendar_widget li:nth-child(29) {
+    .section_calendar table tr:nth-child(5) td:nth-child(1) {
       border-radius: 0 0 0 5px;
       -moz-border-radius: 0 0 0 5px;
       -webkit-border-radius: 0 0 0 5px; }
-    .section_calendar ul.calendar_widget li.today {
+    .section_calendar table tr:nth-child(5) td:nth-child(7) {
+      border-radius: 0 0 5px 0;
+      -moz-border-radius: 0 0 5px 0;
+      -webkit-border-radius: 0 0 5px 0; }
+    .section_calendar table tr td {
       width: 32px;
       height: 32px;
-      border: 4px solid #b83113; }
-    .section_calendar ul.calendar_widget li.calendar_header {
-      height: 10px;
-      font: 8px helvetica, arial, sans-serif;
-      text-transform: uppercase;
-      text-align: center;
-      background: #fff; }
+      overflow: hidden;
+      padding: 4px; }
+      .section_calendar table tr td.today {
+        width: 32px;
+        height: 32px;
+        border: 4px solid #b83113; }
+    .section_calendar table tr div.task {
+      border-radius: 5px 5px 5px 5px;
+      -moz-border-radius: 5px 5px 5px 5px;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      float: right;
+      margin: 2px;
+      width: 7px;
+      height: 7px;
+      background: #b83113;
+      overflow: hidden;
+      text-indent: -9999px; }
+  .section_calendar table thead tr {
+    height: 10px;
+    font: 8px helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    background: #fff; }
 
 .section_class_dashboard {
   width: 940px; }
