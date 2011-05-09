@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
     if @course.save
       # If save succeeds, redirect to the list action
       flash[:notice] = "Course created."
-      redirect_to(course_path)
+      redirect_to(course_path(@course.id))
     else
       @teachers = Teacher.order('last_name ASC')
       render('new')

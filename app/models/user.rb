@@ -18,6 +18,7 @@ class User  < ActiveRecord::Base
     end
 
   before_save :create_hashed_password
+  before_save :capitalize_names
   after_save :clear_password
 
   scope :sorted_by_type, order("users.type ASC, users.last_name ASC, users.first_name ASC")
@@ -102,6 +103,11 @@ class User  < ActiveRecord::Base
   def clear_password
     # for security and b/c hashing is not needed
     self.password = nil
+  end
+
+  def capitalize_names
+    self.first_name.capitalize!
+    self.last_name.capitalize!
   end
 
 

@@ -1,0 +1,17 @@
+<% @page_title = "Create Enrollment" %>
+
+<%= link_to("<< Back to List", enrollments_path, :class => 'back-link') %>
+
+<div class="enrollment new">
+  <h2>Create Enrollment</h2>
+
+  <%= form_for(@enrollment) do |f| %>
+  
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Create Enrollment") %>
+    </div>
+    
+  <% end %>
+</div>

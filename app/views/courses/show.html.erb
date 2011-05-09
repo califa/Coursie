@@ -3,7 +3,7 @@
 <%= link_to("<< Back to List", courses_path, :class => 'back-link') %>
 
 <div class="course show">
-  <h2>Show Course</h2>
+  <h2>Course Details</h2>
 
   <table summary="Course detail view">
     <tr>
@@ -43,5 +43,49 @@
       <td><%= @course.updated_at %></td>
     </tr>
   </table>
+
+  <h2>Assignments</h2>
+
+  <table class="listing" summary="Assignment list">
+    <tr class="header">
+      <th>Assignment</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Actions</th>
+    </tr>
+    <% @course.assignments.each do |assignment| %>
+    <tr>
+      <td><%= link_to(assignment.title, assignment_path(assignment.id), :class => 'action show') %></td>
+      <td class="center"><%= status_tag(assignment.test) %></td>
+      <td class="center"><%= assignment.due_date %></td>
+      <td class="actions">
+        <%= link_to("Edit", edit_assignment_path(assignment.id), :class => 'action edit') %>
+        <%= link_to("Delete", delete_assignment_path(assignment.id), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+  <h2>Enrollments</h2>
+
+  <table class="listing" summary="Enrollment list">
+    <tr class="header">
+      <th>Name</th>
+      <th>Grade</th>
+      <th>Actions</th>
+    </tr>
+    <% @course.enrollments.each do |student| %>
+    <tr>
+      <td class="center"><%= student.name %></td>
+      <td class="center"><%= student.grade %></td>
+      <td class="actions">
+        <%= link_to("Grade", edit_enrollment_path(student.id), :class => 'action edit') %>
+        <%= link_to("Remove", delete_enrollment_path(student.id), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+
   
 </div>

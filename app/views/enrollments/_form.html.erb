@@ -1,0 +1,13 @@
+<%= error_messages_for(@enrollments) %>
+
+
+<table summary="Enrollment form fields">
+  <tr>
+    <th><%= f.label(:student_id, "Student") %></th>
+    <td><%= f.select(:student_id, @students.collect {|student| [student.list_name, student.id]}, :allow_blank => false) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:course_id, "Course") %></th>
+    <td><%= f.select(:course_id, @courses.collect {|course| [course.name, course.id]}, :allow_blank => false) %></td>
+  </tr>
+</table>

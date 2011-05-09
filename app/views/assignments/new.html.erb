@@ -1,0 +1,17 @@
+<% @page_title = "Create Assignment" %>
+
+<%= link_to("<< Back to List", assignments_path, :class => 'back-link') %>
+
+<div class="assignment new">
+  <h2>Create Assignment</h2>
+
+  <%= form_for(@assignment) do |f| %>
+  
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Create Assignment") %>
+    </div>
+    
+  <% end %>
+</div>

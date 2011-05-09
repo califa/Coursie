@@ -18,8 +18,8 @@
       <td class="center"><%= status_tag(course.open) %></td>
       <td class="center"><%= course.enrollments.size %></td>
       <td class="actions">
-        <%= link_to("Enrollments", "#", :class => 'action show') %>
-        <%= link_to("Assignments", "#", :class => 'action show') %>
+        <%= link_to("Enrollments", enrollments_path(:course_id => course.id), :class => 'action show') %>
+        <%= link_to("Assignments", assignments_path(:course_id => course.id), :class => 'action show') %>
         <%= link_to("Edit", edit_course_path(course.id), :class => 'action edit') %>
         <%= link_to("Delete", delete_course_path(course.id), :class => 'action delete') %>
       </td>

@@ -1,0 +1,17 @@
+<% @page_title = "Edit Enrollment: #{@enrollment.title}" %>
+
+<%= link_to("<< Back to List", enrollments_path) %>
+
+<div class="enrollment edit">
+  <h2>Update Enrollment</h2>
+
+  <%= form_for(@enrollment) do |f| %>
+  
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Enrollment") %>
+    </div>
+    
+  <% end %>
+</div>

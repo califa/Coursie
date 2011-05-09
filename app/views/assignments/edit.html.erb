@@ -1,0 +1,17 @@
+<% @page_title = "Edit Assignment: #{@assignment.title}" %>
+
+<%= link_to("<< Back to List", assignments_path) %>
+
+<div class="assignment edit">
+  <h2>Update Assignment</h2>
+
+  <%= form_for(@assignment) do |f| %>
+  
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Assignment") %>
+    </div>
+    
+  <% end %>
+</div>

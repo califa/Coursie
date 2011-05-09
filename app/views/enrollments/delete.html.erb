@@ -1,0 +1,17 @@
+<% @page_title = "Delete enrollment: #{@enrollment.student.name} to #{@enrollment.course.name}" %>
+
+<%= link_to("<< Back to List", enrollments_path ) %>
+
+<div class="enrollment delete">
+  <h2>Delete enrollment</h2>
+  
+  <%= form_for(:enrollment, :url => enrollment_path(@enrollment.id), :html => { :method => :delete }) do |f| -%>
+
+    <p>Are you sure you want to permanently delete <%= @enrollment.student.name %> from <%= @enrollment.course.name %>?</p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete enrollment") %>
+    </div>
+    
+  <% end %>
+</div>

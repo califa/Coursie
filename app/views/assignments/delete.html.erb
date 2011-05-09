@@ -1,0 +1,19 @@
+<% @page_title = "Delete assignment: #{@assignment.title}" %>
+
+<%= link_to("<< Back to List", assignments_path ) %>
+
+<div class="assignment delete">
+  <h2>Delete assignment</h2>
+  
+  <%= form_for(:assignment, :url => assignment_path(@assignment.id), :html => { :method => :delete }) do |f| -%>
+
+    <p>Are you sure you want to permanently delete this assignment?</p>
+  
+    <p class="reference-name"><%= @assignment.title %></p>
+  
+    <div class="form-buttons">
+      <%= submit_tag("Delete assignment") %>
+    </div>
+    
+  <% end %>
+</div>

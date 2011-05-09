@@ -1,0 +1,41 @@
+<% @page_title = "Show Assignment: #{@assignment.title}" %>
+
+<%= link_to("<< Back to List", assignments_path, :class => 'back-link') %>
+
+<% a_type = @assignment.test ? "Test" : "Assignment" %>
+
+<div class="assignment show">
+  <h2><%= a_type %> Detail View</h2>
+
+  <table summary="<%= a_type %> detail view">
+    <tr>
+      <th>Course</th>
+      <td><%= @assignment.course.name %></td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td><%= @assignment.title %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @assignment.description %></td>
+    </tr>
+    <tr>
+      <th>Due Date</th>
+      <td><%= @assignment.due_date.strftime("%A, %B %e") %></td>
+    </tr>
+    <tr>
+      <th>Test?</th>
+      <td><%= @assignment.test ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @assignment.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @assignment.updated_at %></td>
+    </tr>
+  </table>
+  
+</div>

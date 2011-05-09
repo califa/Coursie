@@ -15,11 +15,11 @@
   </tr>
   <tr>
     <th><%= f.label(:day) %></th>
-    <td><%= f.select(:day, {"Monday" => "mon", "Tuesday" => "tue", "Wednesday" => "wed", "Thursday" => "thu", "Friday" => "fri", "Saturday" => "sat", "Sunday" => "sun"}) %></td>
+    <td><%= f.select(:day, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]) %></td>
   </tr>
   <tr>
     <th><%= f.label(:time, "Starting Time") %></th>
-    <td><%= f.select(:time_hours, (0..23).map do |x| format("%02d", x) end ) %> : <%= f.select(:time_minutes, (00..59).step(5).map do |x| format("%02d", x) end ) %></td>
+    <td><%= f.select(:time_hours, (7..23).map do |x| format("%02d", x) end ) %> : <%= f.select(:time_minutes, (00..59).step(5).map do |x| format("%02d", x) end ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:duration, "Duration") %></th>

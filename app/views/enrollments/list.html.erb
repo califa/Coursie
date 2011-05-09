@@ -1,0 +1,25 @@
+<% @page_title = "Enrollments List" %>
+
+<div class="enrollment list">
+  <h2><%= pluralize(@enrollments.size, "Enrollment")%> <% if params[:course_id] %><%="for #{Course.find(params[:course_id]).name}"%><%end%></h2>
+  
+  <%= link_to("Add New Enrollment", new_enrollment_path, :class => 'action new') %>
+
+  <table class="listing" summary="Enrollment list">
+    <tr class="header">
+      <th>Student</th>
+      <th>Course</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @enrollments.each do |enrollment| %>
+    <tr>
+      <td><%= enrollment.student.list_name %></td>
+      <td><%= enrollment.course.name %></td>
+      <td class="actions">
+        <%= link_to("Delete", delete_enrollment_path(enrollment.id), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
