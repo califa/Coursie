@@ -178,6 +178,21 @@ header {
 					@include border-radius(0,0,0,5px);
 
 				}
+	        .todo_class {
+                font-size: 10px;
+                color: #492f22;
+                padding-right: 15px;
+	            }
+	         .todo_due {
+	            font-size: 10px;
+	            font-style: italic;
+                display: block;
+	            text-align:right;
+	            margin-top: -14px;
+	            &.level1 { font-weight: bold; color: #b83113; }
+	            &.level2 {color: #b66452; }
+	            &.level3 {color: #aa8647;}
+	            }
 			}
 		}
 }
@@ -199,6 +214,7 @@ header {
 
         tr {
 		// Checkers Coloring
+
 		background: $list1;
             text-align: center;
             &:nth-child(even) {
@@ -207,11 +223,18 @@ header {
                             background:$list2;
                         }
                     }
+
                 }
             &:nth-child(odd) {
                     td {
                         &:nth-child(odd) {
                             background:$list2;
+                        }
+                    }
+                    .notmonth { background: #efefef }
+                    td.notmonth {
+                        &:nth-child(odd) {
+                            background:#e1e1e1;
                         }
                     }
                 }

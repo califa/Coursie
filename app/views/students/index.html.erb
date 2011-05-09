@@ -5,48 +5,15 @@
         </hgroup>
         <div class="section_container">
             <ul class="stripelist">
+              <% @tasks.each do |task| %>
+              <% due = human_date(task.date) %>
                 <li>
-                    <div class="urgency urgent"></div>
-                    <span class="todo_class">Creative Computing</span>
-                    <span class="todo_title">Read chapter 7. Complete Processing animation.</span>
-                    <span class="todo_due level1">Overdue!</span>
+                    <div class="urgency<%if due[1] == 1 then %> urgent<% end %>"></div>
+                    <span class="todo_class"><%= task.class %></span>
+                    <span class="todo_title"><%= truncate(task.name, :length => 75, :omission => "...") %></span>
+                    <span class="todo_due level<%= due[1] %>"><%= due[0] %></span>
                 </li>
-                <li>
-                    <div class="urgency urgent"></div>
-                    <span class="todo_class">PWAD 2</span>
-                    <span class="todo_title">Formal analysis of a 14th-18th century artwork from the Metropolitan Museum.</span>
-                    <span class="todo_due level1">Tomorrow!</span>
-                </li>
-                <li>
-                    <div class="urgency"></div>
-                    <span class="todo_class">Databases</span>
-                    <span class="todo_title">Read chapters 5 and 6 in the CakePHP manual.</span>
-                    <span class="todo_due level2">Thursday</span>
-                </li>
-                <li>
-                    <div class="urgency"></div>
-                    <span class="todo_class">Databases</span>
-                    <span class="todo_title">Create a blog using CakePHP. Save PHP to text file and attach it to the...</span>
-                    <span class="todo_due level2">Thursday</span>
-                </li>
-                <li>
-                    <div class="urgency"></div>
-                    <span class="todo_class">Entrepreneurship</span>
-                    <span class="todo_title">Read Rolling Stone case study and answer these questions.</span>
-                    <span class="todo_due level3">Next Monday</span>
-                </li>
-                <li>
-                    <div class="urgency"></div>
-                    <span class="todo_class">CRW 2</span>
-                    <span class="todo_title">Sit on your staircase. Write about your cross-sensory perception.</span>
-                    <span class="todo_due level3">Next Monday</span>
-                </li>
-                <li>
-                    <div class="urgency">&nbsp</div>
-                    <span class="todo_class">Creative Computing</span>
-                    <span class="todo_title">Midterms due.</span>
-                    <span class="todo_due level3">Next Tuesday</span>
-                </li>
+              <% end %>
             </ul>
         </div>
 

@@ -139,6 +139,23 @@ header {
       border-radius: 0 0 0 5px;
       -moz-border-radius: 0 0 0 5px;
       -webkit-border-radius: 0 0 0 5px; }
+    .section_todo ul li .todo_class {
+      font-size: 10px;
+      color: #492f22;
+      padding-right: 15px; }
+    .section_todo ul li .todo_due {
+      font-size: 10px;
+      font-style: italic;
+      display: block;
+      text-align: right;
+      margin-top: -14px; }
+      .section_todo ul li .todo_due.level1 {
+        font-weight: bold;
+        color: #b83113; }
+      .section_todo ul li .todo_due.level2 {
+        color: #b66452; }
+      .section_todo ul li .todo_due.level3 {
+        color: #aa8647; }
 
 .section_calendar {
   width: 300px;
@@ -154,6 +171,10 @@ header {
       background: #e8e6db; }
     .section_calendar table tr:nth-child(odd) td:nth-child(odd) {
       background: #e8e6db; }
+    .section_calendar table tr:nth-child(odd) .notmonth {
+      background: #efefef; }
+    .section_calendar table tr:nth-child(odd) td.notmonth:nth-child(odd) {
+      background: #e1e1e1; }
     .section_calendar table tr:nth-child(1) td:nth-child(1) {
       border-radius: 5px 0 0 0;
       -moz-border-radius: 5px 0 0 0;
