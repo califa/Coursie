@@ -91,4 +91,5 @@ Lms::Application.routes.draw do
     get :delete, :on => :member
   end
 
+  resources :students
 end

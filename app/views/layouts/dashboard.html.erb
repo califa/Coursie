@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ruby LMS</title>
+	<link href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">School Links</a>
+                </li>
+                <li>
+                    <form action="#" method="get">
+                    <input type="search" value="Search classes, homework and forums..." />
+                    </form>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">To-Do</a>
+                </li>
+                <li>
+                    <a href="#">Classes</a>
+                </li>
+                <li>
+                    <a href="#">Inbox</a>
+                </li>
+                <li>
+                    <a href="#"><%= User.find(session[:user_id]).name %></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="site_contain">
+
+      <ul class="alerts">
+      <% if !flash[:alert].blank? %>
+      <li class="school_alert">
+        <%= flash[:alert] %>
+      </li>
+      <% end %>
+      <% if !flash[:exam].blank? %>
+      <li class="school_alert">
+        <%= flash[:exam] %>
+      </li>
+      <% end %>
+      </ul>
+
+    <!--<ul class="alerts">-->
+		<!--<li class="school_alert">Alert: The New School will be closed on Tuesday February 15th 2011.</li>-->
+    	<!--<li class="exam_alert">Text coming up: <em>Time: Core Studio</em> on Friday 2/25</li>-->
+	<!--</ul>-->
+
+      <%= yield %>
+
+    </div>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
+
+

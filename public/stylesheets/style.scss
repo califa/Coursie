@@ -1,0 +1,283 @@
+// Colors
+$bgcolor: #d0cdbc;
+$brown: #492f22;
+$red: #b83113;
+$blue: #6677af;
+$list1: #f5f3ea;
+$list2: #e8e6db;
+
+// Measure
+$header_height: 40px;
+
+// Commands
+@mixin border-radius($tl: 10px, $tr: 10px, $bl: 10px, $br: 10px) {
+	border-radius: $tl $tr $bl $br;
+    -moz-border-radius: $tl $tr $bl $br;
+    -webkit-border-radius: $tl $tr $bl $br;
+}
+
+// Page Elements
+html, body {
+	font: 12px helvetica, arial, sans-serif;
+	height:100%;
+	}
+
+body {
+	background: $bgcolor;
+}
+
+header, footer, nav { display: block;}
+
+.site_contain {
+	width: 940px;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+.alerts li {
+	color: #fff;
+	text-align:center;
+	@include border-radius();
+	padding:5px;
+	margin-bottom:10px;
+		&.school_alert {
+			background:$red;
+		 	}
+		&.exam_alert {
+			background:$blue;
+		}
+	}
+
+section {
+	margin-top:$header_height;
+	float: left;
+	}
+
+.section_container {
+	background: #fff;
+	padding: 10px;
+	@include border-radius();
+	}
+
+h1 {
+	display: inline;
+	font: 16pt Arvo, Rockwell;
+	color: $brown;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #fff;
+	padding-left: 15px;
+	margin-top: -30px;
+	float:left;
+	}
+
+.settings {
+	width: 17px;
+	height: 16px;
+	background: url('../img/cog.png') top left no-repeat;
+	text-indent: -9999px;
+	padding-right: 15px;
+	margin-top: -25px;
+	float:right;
+	}
+
+.more {
+	@include border-radius(0, 0, 10px, 10px);
+	background: #fff;
+	padding: 0 10px 10px;
+	margin: 0px 20px 0 0;
+	float:right;
+		a {
+			font-style: italic;
+			color: $blue;
+		}
+	}
+
+.stripelist li {
+	height: 12px;
+	padding: 14px;
+	background: $list1;
+
+	&:first-child {
+		@include border-radius(5px, 5px, 0, 0);
+	}
+
+	&:last-child {
+		@include border-radius(0, 0, 5px, 5px);
+	}
+	&:nth-child(2n+2) {
+		background:$list2;
+	}
+}
+
+.clear {
+	content: ".";
+	    display: block;
+	    height: 0;
+	    clear: both;
+	    visibility: hidden;
+	}
+// Header
+header {
+	background: $brown;
+	height: ($header_height)-16px;
+	margin-bottom: 10px;
+	padding:8px;
+		a {
+			color: #fff;
+			font-style:none;
+		}
+		ul {
+			position: relative;
+			left:500px;
+		}
+		li {
+			float:left;
+			margin-left: 20px;
+			a {
+				padding-top: 5px;
+			}
+		}
+		input {
+			width:280px;
+			height:30px;
+		}
+	}
+
+// Homework Due
+
+.section_todo {
+	width: 620px;
+	margin-right: 20px;
+		ul {
+			height: 280px;
+			width: 100%;
+			li {
+				.urgency {
+					width: 10px;
+					height: 40px;
+					margin: -14px 14px 0 -14px; // Deal with li padding.
+					background: #000;
+					opacity: 0.05;
+					float: left;
+
+					&.urgent {
+						height:38px;
+						background:$red;
+						opacity: 1;
+						border-top: 1px solid #c65a42;
+						border-bottom: 1px solid #a52c11;
+					}
+				}
+				&:first-child .urgency {
+					@include border-radius(5px,0,0,0);
+				}
+				&:last-child .urgency {
+					@include border-radius(0,0,0,5px);
+
+				}
+			}
+		}
+}
+
+// Calendar
+
+.section_calendar {
+
+	width: 300px;
+	height: 300px;
+	table {
+		margin:auto;
+	}
+	nav {
+		margin:auto;
+	}
+	ul.calendar_widget {
+		li {
+		float:left;
+		width: 40px;
+		height: 40px;
+
+
+		// Checkers Coloring
+		background: $list1;
+		&:nth-child(even) {
+				background:$list2;
+		}
+
+		// Rounded Corners
+		&:nth-child(1) {
+				@include border-radius(5px,0,0,0)
+			}
+		&:nth-child(7) {
+				@include border-radius(0,5px,0,0)
+			}
+		&:nth-child(35) {
+				@include border-radius(0,0,5px,0)
+			}
+		&:nth-child(29) {
+				@include border-radius(0,0,0,5px);
+			}
+
+		// Today
+		&.today {
+			width: 32px;
+			height: 32px;
+			border: 4px solid $red;
+		}
+
+		&.calendar_header {
+			height:10px;
+			font: 8px helvetica, arial, sans-serif;
+			text-transform: uppercase;
+			text-align: center;
+			background: #fff;
+		}
+	}
+
+	}
+
+}
+
+// Class Dashboard
+
+.section_class_dashboard {
+	width: 940px;
+	ul.stripelist {
+		width: 280px;
+		font-weight:bold;
+		float:left;
+		margin-right:40px;
+		a { color: $brown; }
+		li.selected {
+			background:$red;
+			a { color: #fff; }
+		}
+	}
+
+	.class_selected {
+		float:left;
+		h2 {
+			padding-top:10px;
+			font: 15pt Arvo, Rockwell;
+			color: $red;
+		}
+	}
+
+}
+
+// Footer
+
+footer {
+	background: $brown;
+	height: $header_height;
+	clear: both;
+	li {
+		float: left;
+	}
+	a {
+		color: #fff;
+	}
+}
