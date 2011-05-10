@@ -22,7 +22,15 @@
       <td><%= user.email %></td>
       <td><%= user.name %></td>
       <td class="actions">
-        <%= link_to('Edit', edit_user_path(user.id), :class => 'action edit') %>
+        <% if user.class == Admin %>
+            <%= link_to('Edit', edit_admin_path(user.id), :class => 'action edit') %>
+        <% elsif user.class == Teacher %>
+            <%= link_to('Edit', edit_teacher_path(user.id), :class => 'action edit') %>
+        <% elsif user.class == Student %>
+            <%= link_to('Edit', edit_student_path(user.id), :class => 'action edit') %>
+        <% else %>
+            <%= link_to('Edit', edit_user_path(user.id), :class => 'action edit') %>
+        <% end %>
         <%= link_to('Delete', delete_user_path(user.id), :class => 'action delete') %>
       </td>
     </tr>

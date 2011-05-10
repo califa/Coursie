@@ -14,9 +14,16 @@ class User  < ActiveRecord::Base
   validate :validates_email
 
     def validates_email
-      errors.add_to_base "That email address is taken" if User.find_by_email(self.email)
+      if self.new_record? || self.new_email?
+        errors.add_to_base "That email address is taken" if User.find_by_email(self.email)
+#      elsif
+#        errors.add_to_base "That email address is taken" if User.find_by_email(self.email)
+      end
     end
 
+    def new_email?
+      !(self.email == self.email_was)
+    end
   before_save :create_hashed_password
   before_save :capitalize_names
   after_save :clear_password

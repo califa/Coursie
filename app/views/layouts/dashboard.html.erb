@@ -6,6 +6,8 @@
 	<link href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
+    <%= javascript_include_tag('jquery-1.6.min') %>
+    <%= javascript_include_tag('tabs') %>
 </head>
 <body>
 
@@ -22,9 +24,6 @@
                     </form>
                 </li>
                 <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
                     <a href="#">To-Do</a>
                 </li>
                 <li>
@@ -34,7 +33,10 @@
                     <a href="#">Inbox</a>
                 </li>
                 <li>
-                    <a href="#"><%= @student.name %></a>
+                    <a href="#"><%="Hi #{@student.first_name}" %></a>
+                </li>
+                <li>
+                  <%= link_to("Logout", :controller => 'access', :action => 'logout') %>
                 </li>
             </ul>
         </nav>

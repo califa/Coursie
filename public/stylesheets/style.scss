@@ -151,51 +151,53 @@ header {
 .section_todo {
 	width: 620px;
 	margin-right: 20px;
-		ul {
-			height: 280px;
-			width: 100%;
-			li {
-				.urgency {
-					width: 10px;
-					height: 40px;
-					margin: -14px 14px 0 -14px; // Deal with li padding.
-					background: #000;
-					opacity: 0.05;
-					float: left;
-
-					&.urgent {
-						height:38px;
-						background:$red;
-						opacity: 1;
-						border-top: 1px solid #c65a42;
-						border-bottom: 1px solid #a52c11;
-					}
-				}
-				&:first-child .urgency {
-					@include border-radius(5px,0,0,0);
-				}
-				&:last-child .urgency {
-					@include border-radius(0,0,0,5px);
-
-				}
-	        .todo_class {
-                font-size: 10px;
-                color: #492f22;
-                padding-right: 15px;
-	            }
-	         .todo_due {
-	            font-size: 10px;
-	            font-style: italic;
-                display: block;
-	            text-align:right;
-	            margin-top: -14px;
-	            &.level1 { font-weight: bold; color: #b83113; }
-	            &.level2 {color: #b66452; }
-	            &.level3 {color: #aa8647;}
-	            }
-			}
-		}
 }
+
+ul.todo_list {
+    height: 280px;
+    width: 100%;
+    li {
+        .urgency {
+            width: 10px;
+            height: 40px;
+            margin: -14px 14px 0 -14px; // Deal with li padding.
+            background: #000;
+            opacity: 0.05;
+            float: left;
+
+            &.urgent {
+                height:38px;
+                background:$red;
+                opacity: 1;
+                border-top: 1px solid #c65a42;
+                border-bottom: 1px solid #a52c11;
+            }
+        }
+        &:first-child .urgency {
+            @include border-radius(5px,0,0,0);
+        }
+        &:last-child .urgency {
+            @include border-radius(0,0,0,5px);
+
+        }
+    .todo_class {
+        font-size: 10px;
+        color: #492f22;
+        padding-right: 15px;
+        }
+     .todo_due {
+        font-size: 10px;
+        font-style: italic;
+        display: block;
+        text-align:right;
+        margin-top: -14px;
+        &.level1 { font-weight: bold; color: #b83113; }
+        &.level2 {color: #b66452; }
+        &.level3 {color: #aa8647;}
+        }
+    }
+}
+
 
 // Calendar
 
@@ -304,26 +306,95 @@ header {
 
 .section_class_dashboard {
 	width: 940px;
-	ul.stripelist {
+	nav ul.stripelist {
 		width: 280px;
 		font-weight:bold;
 		float:left;
 		margin-right:40px;
-		a { color: $brown; }
-		li.selected {
-			background:$red;
-			a { color: #fff; }
-		}
+        li {
+            a {
+                margin: -14px 0 0 -14px;
+                padding: 14px 0 0 14px;
+                display: block;
+                color: $brown;
+                width: 266px;
+                height: 26px;   	     }
+            a.selected {
+                background:$red;
+                color: #fff;
+            }
+
+            &:first-child a {
+                @include border-radius(5px, 5px, 0, 0);
+            }
+
+            &:last-child a {
+                @include border-radius(0, 0, 5px, 5px);
+            }
+        }
 	}
 
 	.class_selected {
-		float:left;
-		h2 {
-			padding-top:10px;
-			font: 15pt Arvo, Rockwell;
-			color: $red;
-		}
+	    position:absolute;
+
+        margin-left:320px;
+        background: white;
+        width: 600px;
+       // background: blue;
+        hgroup {
+            height: 100px;
+            h2 {
+                padding-top:10px;
+                font: 15pt Arvo, Rockwell;
+                color: $red;
+            }
+            .class_details {
+                margin: -10px 0 0 17px;
+                width: 580px;
+                .teacher {
+                    font-size: 14px;
+                    font-style: italic;
+                    color: #543d31;
+                }
+                .time {
+                    color: #999585;
+                    font-style: italic;
+                    font-size: 12px;
+                }
+            }
+        }
+        h3 {
+            font: 11pt Arvo, Rockwell;
+            text-transform:uppercase;
+            color: #999585;
+            height:20px;
+        }
+  	    .class_pages {
+  	   //  background:red;
+  	     width: 120px;
+  	     padding:0 10px 10px 10px;
+  	     float:left;
+  	     nav {
+  	        padding: 20px 0 0 12px;
+  	        li {
+  	            padding-bottom: 6px;
+  	            a {
+  	                font-style: italic;
+  	                color: #5265a5;
+  	            }
+
+  	        }
+  	     }
+  	    }
+
+        .todo_list {
+            height:160px;
+  		    width:460px;
+  		    float:left;
+  		}
 	}
+
+
 
 }
 

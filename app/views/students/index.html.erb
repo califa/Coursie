@@ -4,7 +4,7 @@
         	<h1>Homework Due</h1><a href="#" class="settings">Settings</a>
         </hgroup>
         <div class="section_container">
-            <ul class="stripelist">
+            <ul class="stripelist todo_list">
               <% @tasks.each do |task| %>
               <% due = human_date(task.date) %>
                 <li>
@@ -14,6 +14,13 @@
                     <span class="todo_due level<%= due[1] %>"><%= due[0] %></span>
                 </li>
               <% end %>
+              <% if @tasks.size < 7
+                   (7-@tasks.size).times do   %>
+                <li>
+                    <div class="urgency"></div>
+                </li>
+              <% end
+                 end %>
             </ul>
         </div>
 
@@ -63,18 +70,20 @@
         <h1>Class Dashboard</h1>
         <div class="section_container">
             <nav>
-                <ul class="stripelist">
-                   <% @student.courses.each do |course| %>
-                    <li><a href="#"><%= course.name %></a></li>
+                <ul class="tabs stripelist">
+                   <% @student.courses.each_with_index do |course, i| %>
+                    <li><a <% if i == 0 %>class="selected" <% end %>href="<%= "#select_#{course.name.downcase.gsub(' ', '').gsub(':', '')}" %>"><%= course.name %></a></li>
                    <% end %>
                 </ul>
             </nav>
-
-            <div class="class_selected">
+            <% @student.courses.reverse.each do |course| %>
+            <div class="class_selected" id="<%= "select_#{course.name.downcase.gsub(' ', '').gsub(':', '')}" %>">
                 <hgroup>
-					<h2>Entrepreneurship</h2><br/>
-                    	<span class="teacher"></span>
-                    	<span class="time"></span>
+					<h2><%= course.name %></h2><br/>
+                    	<div class="class_details">
+                            <span class="teacher"><%= course.teacher %></span>
+                            <span class="time"><%= "#{course.day}s at 6:00PM" %> <%= ", #{course.place}"  if !course.place.blank? %></span>
+                        </div>
                 </hgroup>
                 <div class="class_pages">
                     <h3>Class Pages</h3>
@@ -89,28 +98,32 @@
                         </ul>
                     </nav>
                 </div>
-
+                <% @tasks = get_tasks(course) %>
                 <div class="class_todo">
-                    <li>
-                        <span class="todo_title"></span>
-                        <span class="todo_due"></span>
-                    </li>
-                    <li>
-                        <span class="todo_title"></span>
-                        <span class="todo_due"></span>
-                    </li>
-                    <li>
-                        <span class="todo_title"></span>
-                        <span class="todo_due"></span>
-                    </li>
-                    <li>
-                        <span class="todo_title"></span>
-                        <span class="todo_due"></span>
-                    </li>
+                <h3>Latest Assignments</h3>
+                <ul class="stripelist todo_list">
+                    <% @tasks.each do |task| %>
+                      <% due = human_date(task.date) %>
+                        <li>
+                            <div class="urgency<%if due[1] == 1 then %> urgent<% end %>"></div>
+                            <span class="todo_title"><%= truncate(task.name, :length => 75, :omission => "...") %></span>
+                            <span class="todo_due level<%= due[1] %>"><%= due[0] %></span>
+                        </li>
+                  <% end %>
+                  <% if @tasks.size < 4
+                       (4-@tasks.size).times do   %>
+                  <li>
+                    <div class="urgency"></div>
+                 </li>
+                 <% end
+                     end %>
+                </ul>
                 </div>
             </div>
+            <% end %>
 			<div class="clear"></div>
         </div>
+
        <div class="more">
             <a href="#">completed classes...</a>
         </div>

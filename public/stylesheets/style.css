@@ -115,47 +115,48 @@ header {
 .section_todo {
   width: 620px;
   margin-right: 20px; }
-  .section_todo ul {
-    height: 280px;
-    width: 100%; }
-    .section_todo ul li .urgency {
-      width: 10px;
-      height: 40px;
-      margin: -14px 14px 0 -14px;
-      background: #000;
-      opacity: 0.05;
-      float: left; }
-      .section_todo ul li .urgency.urgent {
-        height: 38px;
-        background: #b83113;
-        opacity: 1;
-        border-top: 1px solid #c65a42;
-        border-bottom: 1px solid #a52c11; }
-    .section_todo ul li:first-child .urgency {
-      border-radius: 5px 0 0 0;
-      -moz-border-radius: 5px 0 0 0;
-      -webkit-border-radius: 5px 0 0 0; }
-    .section_todo ul li:last-child .urgency {
-      border-radius: 0 0 0 5px;
-      -moz-border-radius: 0 0 0 5px;
-      -webkit-border-radius: 0 0 0 5px; }
-    .section_todo ul li .todo_class {
-      font-size: 10px;
-      color: #492f22;
-      padding-right: 15px; }
-    .section_todo ul li .todo_due {
-      font-size: 10px;
-      font-style: italic;
-      display: block;
-      text-align: right;
-      margin-top: -14px; }
-      .section_todo ul li .todo_due.level1 {
-        font-weight: bold;
-        color: #b83113; }
-      .section_todo ul li .todo_due.level2 {
-        color: #b66452; }
-      .section_todo ul li .todo_due.level3 {
-        color: #aa8647; }
+
+ul.todo_list {
+  height: 280px;
+  width: 100%; }
+  ul.todo_list li .urgency {
+    width: 10px;
+    height: 40px;
+    margin: -14px 14px 0 -14px;
+    background: #000;
+    opacity: 0.05;
+    float: left; }
+    ul.todo_list li .urgency.urgent {
+      height: 38px;
+      background: #b83113;
+      opacity: 1;
+      border-top: 1px solid #c65a42;
+      border-bottom: 1px solid #a52c11; }
+  ul.todo_list li:first-child .urgency {
+    border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0; }
+  ul.todo_list li:last-child .urgency {
+    border-radius: 0 0 0 5px;
+    -moz-border-radius: 0 0 0 5px;
+    -webkit-border-radius: 0 0 0 5px; }
+  ul.todo_list li .todo_class {
+    font-size: 10px;
+    color: #492f22;
+    padding-right: 15px; }
+  ul.todo_list li .todo_due {
+    font-size: 10px;
+    font-style: italic;
+    display: block;
+    text-align: right;
+    margin-top: -14px; }
+    ul.todo_list li .todo_due.level1 {
+      font-weight: bold;
+      color: #b83113; }
+    ul.todo_list li .todo_due.level2 {
+      color: #b66452; }
+    ul.todo_list li .todo_due.level3 {
+      color: #aa8647; }
 
 .section_calendar {
   width: 300px;
@@ -220,23 +221,71 @@ header {
 
 .section_class_dashboard {
   width: 940px; }
-  .section_class_dashboard ul.stripelist {
+  .section_class_dashboard nav ul.stripelist {
     width: 280px;
     font-weight: bold;
     float: left;
     margin-right: 40px; }
-    .section_class_dashboard ul.stripelist a {
-      color: #492f22; }
-    .section_class_dashboard ul.stripelist li.selected {
-      background: #b83113; }
-      .section_class_dashboard ul.stripelist li.selected a {
-        color: #fff; }
+    .section_class_dashboard nav ul.stripelist li a {
+      margin: -14px 0 0 -14px;
+      padding: 14px 0 0 14px;
+      display: block;
+      color: #492f22;
+      width: 266px;
+      height: 26px; }
+    .section_class_dashboard nav ul.stripelist li a.selected {
+      background: #b83113;
+      color: #fff; }
+    .section_class_dashboard nav ul.stripelist li:first-child a {
+      border-radius: 5px 5px 0 0;
+      -moz-border-radius: 5px 5px 0 0;
+      -webkit-border-radius: 5px 5px 0 0; }
+    .section_class_dashboard nav ul.stripelist li:last-child a {
+      border-radius: 0 0 5px 5px;
+      -moz-border-radius: 0 0 5px 5px;
+      -webkit-border-radius: 0 0 5px 5px; }
   .section_class_dashboard .class_selected {
-    float: left; }
-    .section_class_dashboard .class_selected h2 {
-      padding-top: 10px;
-      font: 15pt Arvo, Rockwell;
-      color: #b83113; }
+    position: absolute;
+    margin-left: 320px;
+    background: white;
+    width: 600px; }
+    .section_class_dashboard .class_selected hgroup {
+      height: 100px; }
+      .section_class_dashboard .class_selected hgroup h2 {
+        padding-top: 10px;
+        font: 15pt Arvo, Rockwell;
+        color: #b83113; }
+      .section_class_dashboard .class_selected hgroup .class_details {
+        margin: -10px 0 0 17px;
+        width: 580px; }
+        .section_class_dashboard .class_selected hgroup .class_details .teacher {
+          font-size: 14px;
+          font-style: italic;
+          color: #543d31; }
+        .section_class_dashboard .class_selected hgroup .class_details .time {
+          color: #999585;
+          font-style: italic;
+          font-size: 12px; }
+    .section_class_dashboard .class_selected h3 {
+      font: 11pt Arvo, Rockwell;
+      text-transform: uppercase;
+      color: #999585;
+      height: 20px; }
+    .section_class_dashboard .class_selected .class_pages {
+      width: 120px;
+      padding: 0 10px 10px 10px;
+      float: left; }
+      .section_class_dashboard .class_selected .class_pages nav {
+        padding: 20px 0 0 12px; }
+        .section_class_dashboard .class_selected .class_pages nav li {
+          padding-bottom: 6px; }
+          .section_class_dashboard .class_selected .class_pages nav li a {
+            font-style: italic;
+            color: #5265a5; }
+    .section_class_dashboard .class_selected .todo_list {
+      height: 160px;
+      width: 460px;
+      float: left; }
 
 footer {
   background: #492f22;

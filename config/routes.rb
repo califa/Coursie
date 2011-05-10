@@ -92,4 +92,8 @@ Lms::Application.routes.draw do
   end
 
   resources :students
+
+  resources :teachers
+
+  resources :admins
 end

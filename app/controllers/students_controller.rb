@@ -3,6 +3,7 @@ class Event < Struct.new(:class, :name, :date); end
 class StudentsController < ApplicationController
 
   helper_method :human_date
+  helper_method :get_tasks
 
   require 'table_builder'
   require 'table_builder/calendar_helper'
@@ -11,18 +12,27 @@ class StudentsController < ApplicationController
   def index
     @student = Student.find(session[:user_id])
     @date = Time.now
-    get_tasks
+    @tasks = get_tasks
   end
 
-  def get_tasks
-    @tasks = []
-    @student.courses.each do |course|
-      course.assignments.each do |assignment|
-        @tasks << Event.new(course.name, assignment.title, assignment.due_date)
+  def get_tasks(list_course=nil)
+    tasks = []
+    if list_course
+      list_course.assignments.each do |assignment|
+        tasks << Event.new(list_course.name, assignment.title, assignment.due_date)
       end
+      tasks.sort! {|x,y| x.date <=> y.date }
+      tasks = tasks.slice!(0,4)
+    else
+      @student.courses.each do |course|
+        course.assignments.each do |assignment|
+          tasks << Event.new(course.name, assignment.title, assignment.due_date)
+        end
+      end
+      tasks.sort! {|x,y| x.date <=> y.date }
+      tasks = tasks.slice!(0,7)
     end
-    @tasks.sort! {|x,y| x.date <=> y.date }
-    @tasks = @tasks.slice!(0,7)
+    tasks
   end
 
   def human_date(date)
@@ -61,5 +71,19 @@ class StudentsController < ApplicationController
     [string, level]
   end
 
+
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update_attributes(params[:student])
+      flash[:notice] = 'Student updated.'
+      redirect_to(users_path)
+    else
+      render("edit")
+    end
+  end
 
 end
