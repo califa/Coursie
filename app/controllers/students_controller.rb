@@ -1,6 +1,9 @@
-class Event < Struct.new(:class, :name, :date); end
+class Event < Struct.new(:class, :name, :date, :test); end
 
 class StudentsController < ApplicationController
+
+
+  before_filter :confirm_logged_in_student, :except => [:edit, :update]
 
   helper_method :human_date
   helper_method :get_tasks
@@ -19,14 +22,14 @@ class StudentsController < ApplicationController
     tasks = []
     if list_course
       list_course.assignments.each do |assignment|
-        tasks << Event.new(list_course.name, assignment.title, assignment.due_date)
+        tasks << Event.new(list_course.name, assignment.title, assignment.due_date, assignment.test)
       end
       tasks.sort! {|x,y| x.date <=> y.date }
       tasks = tasks.slice!(0,4)
     else
       @student.courses.each do |course|
         course.assignments.each do |assignment|
-          tasks << Event.new(course.name, assignment.title, assignment.due_date)
+          tasks << Event.new(course.name, assignment.title, assignment.due_date, assignment.test)
         end
       end
       tasks.sort! {|x,y| x.date <=> y.date }

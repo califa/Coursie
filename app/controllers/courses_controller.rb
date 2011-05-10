@@ -1,7 +1,9 @@
 class CoursesController < ApplicationController
-  
-  
-  
+
+  before_filter :confirm_logged_in_teacher
+
+  layout 'admin'
+
   def index
     list
     render('list')

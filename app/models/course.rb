@@ -25,8 +25,10 @@ class Course < ActiveRecord::Base
   private
 
   def get_time_and_duration
-    self.time = "#{format("%02d", time_hours.to_i)}#{format("%02d", time_minutes.to_i)}"
-    self.duration = "#{format("%02d", duration_hours.to_i)}#{format("%02d", duration_minutes.to_i)}"
+    #self.time = "#{format("%02d", time_hours.to_i)}#{format("%02d", time_minutes.to_i)}"
+    #self.duration = "#{format("%02d", duration_hours.to_i)}#{format("%02d", duration_minutes.to_i)}"
+    self.time = "#{time_hours}#{time_minutes}"
+    self.duration = "#{duration_hours}#{duration_minutes}"
   end
 
   def capitalize_name

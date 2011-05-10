@@ -40,7 +40,7 @@ module CalendarHelper
 
     private
 
-    def objects_for_days
+     def objects_for_days
       @calendar.objects_for_days(@objects)
     end
     

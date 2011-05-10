@@ -17,13 +17,15 @@
     <th><%= f.label(:day) %></th>
     <td><%= f.select(:day, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]) %></td>
   </tr>
-  <tr>
+  <tr> <!--   map do |x| format("%02d", x) end -->
     <th><%= f.label(:time, "Starting Time") %></th>
-    <td><%= f.select(:time_hours, (7..23).map do |x| format("%02d", x) end ) %> : <%= f.select(:time_minutes, (00..59).step(5).map do |x| format("%02d", x) end ) %></td>
+    <td><%= select_tag :time_hours, options_for_select(("07".."23").to_a, @course.time.to_s.slice(0,2) ) %> :
+        <%= select_tag :time_minutes, options_for_select(("00".."59").step(5).to_a, @course.time.to_s.slice(2,2) ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:duration, "Duration") %></th>
-    <td><%= f.select(:duration_hours, (0..5).map do |x| format("%02d", x) end ) %> : <%= f.select(:duration_minutes, (00..59).step(5).map do |x| format("%02d", x) end ) %></td>
+    <td><%= select_tag :duration_hours, options_for_select(("00".."05").to_a, @course.duration.to_s.slice(0,2) ) %> :
+        <%= select_tag :duration_minutes, options_for_select(("00".."59").step(5).to_a, @course.duration.to_s.slice(2,2) ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:open) %></th>

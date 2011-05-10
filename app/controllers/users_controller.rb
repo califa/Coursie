@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-  before_filter :confirm_logged_in
+  before_filter :confirm_logged_in_admin
+
+  layout 'admin'
   
   def index
     list

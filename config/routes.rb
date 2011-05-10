@@ -1,5 +1,6 @@
 Lms::Application.routes.draw do
 
+  root :to => 'access#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

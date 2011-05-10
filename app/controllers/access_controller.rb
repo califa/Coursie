@@ -1,7 +1,9 @@
 class AccessController < ApplicationController
   
 
-  before_filter :confirm_logged_in, :except => [:login, :create, :logout]
+  before_filter :confirm_logged_in_teacher, :except => [:login, :create, :logout]
+
+  layout 'admin'
   
   def index
     menu

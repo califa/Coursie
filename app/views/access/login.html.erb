@@ -2,7 +2,10 @@
 
 <div class="login">
   <%= form_tag(:action => 'create', :method => :post) do %>
-  <table>
+   <section class="section_login">
+   <h1>Login Page</h1>
+   <div class="section_container">
+   <table>
     <tr>
       <td><%= label_tag(:email) %></td>
       <td><%= text_field_tag(:email) %></td>
@@ -16,5 +19,7 @@
       <td><%= submit_tag("Log In") %></td>
     </tr>
   </table>
+  </div>
+  </section>
   <% end %>
 </div>

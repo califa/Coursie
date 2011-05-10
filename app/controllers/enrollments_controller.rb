@@ -1,5 +1,7 @@
 class EnrollmentsController < ApplicationController
 
+  before_filter :confirm_logged_in_teacher
+
   def index
     list
     render('list')

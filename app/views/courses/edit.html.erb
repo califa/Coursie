@@ -3,8 +3,9 @@
 <%= link_to("<< Back to List", courses_path) %>
 
 <div class="course edit">
-  <h2>Update Course</h2>
-
+  <section>
+  <h1>Update Course</h1>
+  <div class="section_container">
   <%= form_for(@course) do |f| %>
   
     <%= render(:partial => 'form', :locals => {:f => f}) %>
@@ -14,4 +15,6 @@
     </div>
     
   <% end %>
+  </div>
+  </section>
 </div>

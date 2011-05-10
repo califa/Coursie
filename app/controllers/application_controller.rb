@@ -3,18 +3,40 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def confirm_logged_in(type=["Admin", "Teacher", "Student"])
+
+  def confirm_logged_in_admin
     unless session[:user_id]
       flash[:notice] = "Please log in."
       redirect_to(:controller => 'access', :action => 'login')
       return false # halts the before_filter
     else
-      if type.include?(session[:type])
-        return true
-      else
         if session[:type] == "Student"
-          redirect_to(:controller => 'access', :action => 'login') #PLACE HOLDER
+          redirect_to(:controller => 'students', :action => 'index')
         end
+        if session[:type] == "Teacher"
+          redirect_to(:controller => 'access', :action => 'menu')
+        end
+    end
+  end
+
+  def confirm_logged_in_teacher
+    unless session[:user_id]
+      flash[:notice] = "Please log in."
+      redirect_to(:controller => 'access', :action => 'login')
+      return false # halts the before_filter
+    else
+        if session[:type] == "Student"
+          redirect_to(:controller => 'students', :action => 'index')
+        end
+    end
+  end
+
+    def confirm_logged_in_student
+    unless session[:user_id]
+      flash[:notice] = "Please log in."
+      redirect_to(:controller => 'access', :action => 'login')
+      return false # halts the before_filter
+    else
         if session[:type] == "Teacher"
           redirect_to(:controller => 'access', :action => 'menu')
         end
@@ -22,6 +44,6 @@ class ApplicationController < ActionController::Base
           redirect_to(:controller => 'access', :action => 'menu')
         end
       end
-    end
   end
+
 end

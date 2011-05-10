@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
     <%= javascript_include_tag('jquery-1.6.min') %>
     <%= javascript_include_tag('tabs') %>
+    <%= csrf_meta_tag %>
 </head>
 <body>
 
@@ -16,9 +17,9 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#">School Links</a>
+                    Signed in as <%=@student.name %>
                 </li>
-                <li>
+                <!--<li>
                     <form action="#" method="get">
                     <input type="search" value="Search classes, homework and forums..." />
                     </form>
@@ -31,10 +32,7 @@
                 </li>
                 <li>
                     <a href="#">Inbox</a>
-                </li>
-                <li>
-                    <a href="#"><%="Hi #{@student.first_name}" %></a>
-                </li>
+                </li> -->
                 <li>
                   <%= link_to("Logout", :controller => 'access', :action => 'logout') %>
                 </li>
@@ -64,17 +62,7 @@
       <%= yield %>
 
     </div>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
-    </footer>
+
 
 </body>
 </html>

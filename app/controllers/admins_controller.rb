@@ -1,5 +1,8 @@
 class AdminsController < ApplicationController
 
+  before_filter :confirm_logged_in_admin
+
+  layout 'admin'
 
   def edit
     @admin = Admin.find(params[:id])

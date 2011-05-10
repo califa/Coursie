@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Ruby LMS| <%= @page_title || 'Admin Area' %></title>
+    <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
+    <%= javascript_include_tag('jquery-1.6.min') %>
+    <%= javascript_include_tag('tabs') %>
+  </head>
+  <body class="adminarea">
+    <% unless @page_title == "Admin Login" %>
+    <header>
+      <nav>
+          <ul>
+            <li>Ruby LMS <%= session[:type] %> Menu</li>
+            <li>Logged in as <%= User.find_by_id(session[:user_id]).name %></li>
+            <li><%= link_to("Logout", :controller => 'access', :action => 'logout') %></li>
+          </ul>
+      </nav>
+    </header>
+    <% end %>
+    <div id="main">
+      <% if !flash[:notice].blank? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

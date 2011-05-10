@@ -1,5 +1,9 @@
 class TeachersController < ApplicationController
 
+  before_filter :confirm_logged_in_teacher
+
+  layout 'admin'
+
   def edit
     @teacher = Teacher.find(params[:id])
   end
