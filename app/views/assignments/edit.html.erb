@@ -11,7 +11,7 @@
     <%= render(:partial => 'form', :locals => {:f => f}) %>
     
     <div class="form-buttons">
-      <%= submit_tag("Update Assignment") %>
+      <%= submit_tag("Update #{a_type}", :class => "submit") %>
     </div>
     
   <% end %>

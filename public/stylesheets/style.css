@@ -53,7 +53,7 @@ h1 {
 .settings {
   width: 17px;
   height: 16px;
-  background: url("images/cog.png") top left no-repeat;
+  background: url("../images/cog.png") top left no-repeat;
   text-indent: -9999px;
   padding-right: 15px;
   margin-top: -25px;
@@ -190,6 +190,27 @@ ul.todo_list {
     ul.todo_list li .todo_due.level3 {
       color: #aa8647; }
 
+div.task {
+  float: right;
+  margin-left: 3px;
+  margin-bottom: 3px;
+  width: 7px;
+  height: 7px;
+  background: url(../images/calendar.png);
+  background-position: 0 0;
+  overflow: hidden;
+  text-indent: -9999px; }
+  div.task.completed {
+    background-positiong: 7px 0; }
+  div.task.task_alert {
+    background-position: 14px 0; }
+  div.task.task_test {
+    background-position: 7px 0; }
+  div.task.task_done {
+    background-position: 21px 0; }
+  div.task:nth-child(3n+3) {
+    margin: 0; }
+
 .section_calendar {
   width: 300px;
   height: 300px; }
@@ -230,24 +251,6 @@ ul.todo_list {
       width: 28px;
       height: 28px;
       padding: 6px; }
-      .section_calendar table tr div.task_contain div.task {
-        float: right;
-        margin-left: 3px;
-        margin-bottom: 3px;
-        width: 7px;
-        height: 7px;
-        background: url(../images/calendar.png);
-        background-position: 0 0;
-        overflow: hidden;
-        text-indent: -9999px; }
-        .section_calendar table tr div.task_contain div.task.completed {
-          background-positiong: 7px 0; }
-        .section_calendar table tr div.task_contain div.task.task_alert {
-          background-position: 14px 0; }
-        .section_calendar table tr div.task_contain div.task.task_test {
-          background-position: 7px 0; }
-        .section_calendar table tr div.task_contain div.task:nth-child(3n+3) {
-          margin: 0; }
     .section_calendar table tr td {
       margin: 0;
       padding: 0;
@@ -276,6 +279,27 @@ ul.todo_list {
     text-transform: uppercase;
     text-align: center;
     background: #fff; }
+
+div.legend_container {
+  width: 280px;
+  float: left;
+  padding: 0 20px; }
+
+div.legend {
+  background: #fff;
+  width: 120px;
+  margin: 10px auto 10px;
+  padding: 0;
+  font-size: 10px;
+  float: left; }
+  div.legend div.task {
+    float: left;
+    margin: 2px 5px 0 0; }
+
+hgroup h3 {
+  font: 12pt Arvo, Rockwell;
+  text-align: center;
+  color: #492f22; }
 
 .section_class_dashboard {
   width: 940px;
@@ -347,7 +371,7 @@ ul.todo_list {
       float: left; }
 
 .adminarea .spacer {
-  height: 40px; }
+  height: 20px; }
 .adminarea ul.stripelist {
   text-align: center; }
 .adminarea a {
@@ -527,3 +551,78 @@ ul.todo_list {
       display: block;
       text-decoration: underline;
       margin-bottom: 5px; }
+
+.login_header {
+  font: 80pt Arvo, Rockwell;
+  margin: 0 auto;
+  color: #b83113;
+  text-shadow: #e8e6db 4px 4px;
+  margin-bottom: 50px;
+  margin-left: 20px; }
+
+.login {
+  width: 100%; }
+  .login li {
+    margin: 0; }
+  .login #email {
+    position: relative;
+    background: transparent;
+    z-index: 1000;
+    border: 0;
+    height: 40px;
+    display: block;
+    margin: -14px auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16pt; }
+  .login #password {
+    position: relative;
+    background: transparent;
+    z-index: 5;
+    border: 0;
+    height: 40px;
+    display: block;
+    padding: 0;
+    margin: -14px auto;
+    width: 100%;
+    text-align: center;
+    font-size: 16pt; }
+  .login .section {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 500px; }
+  .login label.overlabel-apply {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    color: #999;
+    text-align: center;
+    font-size: 14pt;
+    margin-top: -5px;
+    width: 565px; }
+  .login .newthing {
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    margin-bottom: 10px; }
+
+.submit {
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #492f22;
+  margin: 10px auto 0;
+  width: 100%;
+  text-align: center;
+  font: 18pt Arvo, Rockwell;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0; }
+  .submit:hover {
+    color: #fff;
+    background: #b83113; }

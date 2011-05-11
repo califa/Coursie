@@ -3,7 +3,7 @@
  <head>
     <title>Ruby LMS | <%= @page_title || 'Admin Area' %></title>
     <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
-    <%= javascript_include_tag('jquery-1.6.min', 'jquery.tools.min') %>
+    <%= javascript_include_tag('jquery-1.6.min', 'jquery.tools.min', 'overlabel') %>
     <%= javascript_include_tag('tabs') %>
   </head>
   <body class="adminarea">
@@ -21,6 +21,7 @@
     <div id="main">
 
       <div class="content">
+      <%if @page_title == "Admin Login" %><div class="spacer"></div><%end%>
               <% if !flash[:notice].blank? %>
       <ul class="alerts">
 		<li class="exam_alert"> <%= flash[:notice] %></li>

@@ -37,16 +37,18 @@
         <h1>Calendar</h1>
         <a href="#" class="settings">Settings</a>
         <div class="section_container">
-
+            <hgroup>
+                <div class="legend_container">
+                    <div class="legend l1"><div class="task task_test">&nbsp;</div> Exams/Tests<br />
+                                           <div class="task task_alert">&nbsp;</div> School alerts</div>
+                    <div class="legend l2"><div class="task task_done">&nbsp;</div> Completed homework<br />
+                                           <div class="task">&nbsp;</div> Incomplete homework</div>
+                </div> <br />
+                <h3><%= Time.now.strftime("%B, %Y")%></h3>
+            </hgroup>
             <% @tasks = get_tasks(nil,true) %>
             <%= calendar_for(@tasks) do |t| %>
-            <hgroup>
-                <nav>
-                    <button type="button" name="prev">Prev</button>
-                    <span class="month"><%= t %></span>
-                    <button type="button" name="next">Next</button>
-                </nav>
-            </hgroup>
+
               <%= t.head('sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat') %>
               <%= t.day do |day, tasks| %>
                 <% tasks = tasks.slice!(0,9) %>

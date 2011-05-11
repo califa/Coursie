@@ -12,11 +12,10 @@
 
       <li>Are you sure you want to permanently <%="delete #{@enrollment.student.name} from #{@enrollment.course.name}" %>?</li>
 
-      <li class="form-buttons">
-      <%= submit_tag("Delete enrollment") %>
-    </li>
+      </ul>
+      <%= submit_tag("Delete enrollment", :class => "submit") %>
 
-    </ul>
+
     <% end %>
   </div>
 </section>

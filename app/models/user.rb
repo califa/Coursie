@@ -8,8 +8,8 @@ class User  < ActiveRecord::Base
   validates :last_name, :presence => true, :length => { :maximum => 50 }
   validates :email, :presence => true, :length => { :maximum => 100 },
     :format => EMAIL_REGEX, :confirmation => true
-
-  validates_length_of :password, :within => 8..25, :on => :create
+  validates_presence_of :password, :on => :create
+  validates_length_of :password, :within => 8..25
 
   validate :validates_email
 

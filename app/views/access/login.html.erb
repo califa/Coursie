@@ -1,25 +1,17 @@
 <% @page_title = "Admin Login" %>
 
+<div class="login_header">Ruby LMS</div>
 <div class="login">
   <%= form_tag(:action => 'create', :method => :post) do %>
-   <section class="section_center">
-   <h1>Login Page</h1>
-   <div class="section_container">
-   <table>
-    <tr>
-      <td><%= label_tag(:email) %></td>
-      <td><%= text_field_tag(:email) %></td>
-    </tr>
-    <tr>
-      <td><%= label_tag(:password) %></td>
-      <td><%= password_field_tag(:password) %></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td><%= submit_tag("Log In") %></td>
-    </tr>
-  </table>
+
+   <div class="newthing">
+
+   <ul class="stripelist">
+      <li><label for="email" class="overlabel">Email</label><%= text_field_tag(:email) %></li>
+      <li><label for="password" class="overlabel">Password</label><%= password_field_tag(:password) %></li>
+  </ul>
   </div>
-  </section>
+<%= submit_tag("Please Log In", :class => "submit") %>
   <% end %>
 </div>
+

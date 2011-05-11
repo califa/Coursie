@@ -13,11 +13,11 @@
 
       <li class="reference-name"><%= @assignment.title %><%" from #{@assignment.course.name}" if @assignment.course %></li>
 
-      <li class="form-buttons">
-      <%= submit_tag("Delete assignment") %>
-    </li>
+      </ul>
+      <%= submit_tag("Delete #{a_type}", :class => "submit") %>
 
-    </ul>
+
+
     <% end %>
   </div>
 </section>
