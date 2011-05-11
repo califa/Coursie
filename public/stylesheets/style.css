@@ -105,19 +105,31 @@ header {
   text-align: center;
   color: #fff; }
   header nav {
-    display: block;
-    width: 940px;
-    margin: 0 auto; }
+    background: blue;
+    margin: 0 auto;
+    width: 940px; }
+    header nav a {
+      color: #fff; }
     header nav li {
-      float: left;
+      float: right;
+      margin-right: 10px;
       margin-left: 20px;
       color: #fff; }
+      header nav li em {
+        font-style: italic; }
       header nav li a {
         color: #f5f3ea;
         font-style: none;
         font-weight: bold; }
         header nav li a:hover {
           color: #e8e6db; }
+      header nav li.logo {
+        font: 20pt Arvo, Rockwell;
+        margin-top: -8px;
+        margin-left: -16px;
+        height: 20px;
+        width: 200px;
+        float: left; }
     header nav input {
       width: 280px;
       height: 30px; }
@@ -184,7 +196,6 @@ ul.todo_list {
   .section_calendar table {
     margin: auto; }
   .section_calendar hgroup {
-    background: blue;
     height: 70px; }
     .section_calendar hgroup nav {
       margin: auto; }
@@ -216,12 +227,13 @@ ul.todo_list {
       -moz-border-radius: 0 0 5px 0;
       -webkit-border-radius: 0 0 5px 0; }
     .section_calendar table tr div.task_contain {
-      width: 26px;
-      height: 26px;
-      padding: 7px; }
+      width: 28px;
+      height: 28px;
+      padding: 6px; }
       .section_calendar table tr div.task_contain div.task {
         float: right;
         margin-left: 3px;
+        margin-bottom: 3px;
         width: 7px;
         height: 7px;
         background: url(../images/calendar.png);
@@ -231,24 +243,23 @@ ul.todo_list {
         .section_calendar table tr div.task_contain div.task.completed {
           background-positiong: 7px 0; }
         .section_calendar table tr div.task_contain div.task.task_alert {
-          float: left;
-          margin-right: 3px;
-          margin-left: 0;
-          background-position: 14px 0;
-          margin-top: 19px; }
+          background-position: 14px 0; }
         .section_calendar table tr div.task_contain div.task.task_test {
-          float: left;
-          bottom: 7px;
-          margin-right: 3px;
-          margin-left: 0;
-          background-position: 21px 0;
-          margin-top: 19px; }
+          background-position: 7px 0; }
+        .section_calendar table tr div.task_contain div.task:nth-child(3n+3) {
+          margin: 0; }
     .section_calendar table tr td {
       margin: 0;
       padding: 0;
       width: 40px;
-      height: 40px;
-      overflow: hidden; }
+      height: 40px; }
+      .section_calendar table tr td a.opentip {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-top: -40px;
+        position: absolute;
+        z-index: 1000; }
       .section_calendar table tr td.today {
         width: 28px;
         height: 28px;
@@ -257,6 +268,8 @@ ul.todo_list {
           width: 26px;
           height: 26px;
           padding: 3px; }
+        .section_calendar table tr td.today a.opentip {
+          margin: -36px 0 0 -4px; }
   .section_calendar table thead tr {
     height: 10px;
     font: 8px helvetica, arial, sans-serif;
@@ -265,7 +278,8 @@ ul.todo_list {
     background: #fff; }
 
 .section_class_dashboard {
-  width: 940px; }
+  width: 940px;
+  margin-bottom: 15px; }
   .section_class_dashboard nav ul.stripelist {
     width: 280px;
     font-weight: bold;
@@ -332,9 +346,28 @@ ul.todo_list {
       width: 460px;
       float: left; }
 
+.adminarea .spacer {
+  height: 40px; }
+.adminarea ul.stripelist {
+  text-align: center; }
+.adminarea a {
+  color: #073c95;
+  font-style: italic; }
+  .adminarea a:hover {
+    color: #6677af; }
 .adminarea div.content {
   width: 600px;
   margin: 0 auto; }
+.adminarea nav {
+  width: 600px; }
+  .adminarea nav li {
+    margin-right: 0x; }
+  .adminarea nav .logo {
+    width: 250px; }
+  .adminarea nav a {
+    color: #fff; }
+    .adminarea nav a:hover {
+      color: #fff; }
 .adminarea section {
   width: 100%; }
 .adminarea div.section_container {
@@ -343,13 +376,11 @@ ul.todo_list {
   text-align: center;
   display: block;
   width: 100%; }
-.adminarea .section_adminmenu {
-  width: 400px; }
-  .adminarea .section_adminmenu div.section_container {
-    text-align: center; }
-    .adminarea .section_adminmenu div.section_container a {
-      color: #492f22;
-      font-weight: bold; }
+.adminarea .section_adminmenu div.section_container {
+  text-align: center; }
+  .adminarea .section_adminmenu div.section_container a {
+    color: #492f22;
+    font-weight: bold; }
 .adminarea .actions {
   text-align: right; }
   .adminarea .actions a {
@@ -362,36 +393,53 @@ ul.todo_list {
     margin: 0 2px; }
     .adminarea .actions a:hover {
       background: #492f22; }
+  .adminarea .actions.testbar a {
+    background: #073c95; }
 .adminarea .num {
   text-align: center; }
 .adminarea .lister {
   text-align: left;
   padding-left: 10px; }
 .adminarea table {
-  width: 100%; }
+  width: 100%;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px; }
   .adminarea table tr {
-    background: #f5f3ea;
-    text-align: center; }
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px; }
     .adminarea table tr td {
-      padding: 10px; }
-    .adminarea table tr:nth-child(even) {
+      padding: 10px;
+      background: #f5f3ea; }
+      .adminarea table tr td.testbar {
+        background: #dadce8; }
+    .adminarea table tr:nth-child(even) td {
       background: #e8e6db; }
-    .adminarea table tr:nth-child(2) td:first-child {
+      .adminarea table tr:nth-child(even) td.testbar {
+        background: #e9eaf5; }
+    .adminarea table tr .actions a:hover {
+      background: #492f22; }
+    .adminarea table tr:first-child td:first-child {
       border-radius: 5px 0 0 0;
       -moz-border-radius: 5px 0 0 0;
       -webkit-border-radius: 5px 0 0 0; }
-    .adminarea table tr:nth-child(2) td:last-child {
+    .adminarea table tr:first-child td:last-child {
       border-radius: 0 5px 0 0;
       -moz-border-radius: 0 5px 0 0;
       -webkit-border-radius: 0 5px 0 0; }
-    .adminarea table tr:last-child td:first-child {
-      border-radius: 0 0 0 5px;
-      -moz-border-radius: 0 0 0 5px;
-      -webkit-border-radius: 0 0 0 5px; }
-    .adminarea table tr:last-child td:last-child {
-      border-radius: 0 0 5px 0;
-      -moz-border-radius: 0 0 5px 0;
-      -webkit-border-radius: 0 0 5px 0; }
+    .adminarea table tr:last-child {
+      border-radius: 10px 10px 10px 10px;
+      -moz-border-radius: 10px 10px 10px 10px;
+      -webkit-border-radius: 10px 10px 10px 10px; }
+      .adminarea table tr:last-child td:first-child {
+        border-radius: 0 0 0 5px;
+        -moz-border-radius: 0 0 0 5px;
+        -webkit-border-radius: 0 0 0 5px; }
+      .adminarea table tr:last-child td:last-child {
+        border-radius: 0 0 5px 0;
+        -moz-border-radius: 0 0 5px 0;
+        -webkit-border-radius: 0 0 5px 0; }
     .adminarea table tr td {
       margin: 0;
       padding: 0 10px;
@@ -405,3 +453,77 @@ ul.todo_list {
     background: #fff; }
 .adminarea .field_with_errors {
   color: #b83113; }
+.adminarea table.toplist tr:nth-child(2) td:first-child {
+  border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0; }
+.adminarea table.toplist tr:nth-child(2) td:last-child {
+  border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0; }
+.adminarea table.toplist tr:nth-child(2):only-child td:first-child {
+  border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px; }
+.adminarea table.toplist tr:nth-child(2):only-child td:last-child {
+  border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0; }
+.adminarea table.toplist tr:nth-child(2):only-child td:first-child:last-child {
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px; }
+.adminarea table.sidelist tr:first-child td:first-child {
+  border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0; }
+.adminarea table.sidelist tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+  -moz-border-radius: 0 0 0 5px;
+  -webkit-border-radius: 0 0 0 5px; }
+.adminarea li.reference-name {
+  text-weight: bold; }
+.adminarea div.actions {
+  margin-right: -10px; }
+.adminarea .errorExplanation li {
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  background: #b83113;
+  color: #fff;
+  margin-bottom: 10px;
+  padding: 5px; }
+
+.tooltip {
+  display: none;
+  background: #f5f3ea;
+  border-radius: 10px 0 10px 10px;
+  -moz-border-radius: 10px 0 10px 10px;
+  -webkit-border-radius: 10px 0 10px 10px;
+  border: 4px solid #c6c5b6;
+  padding: 10px;
+  width: 200px;
+  font-size: 11px;
+  z-index: 1000;
+  color: #fff; }
+  .tooltip .tipdate {
+    font: 12pt Arvo, Rockwell;
+    color: #492f22;
+    display: block;
+    margin-bottom: 10px; }
+  .tooltip li {
+    background: #b83113;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    margin-bottom: 10px; }
+    .tooltip li:last-child {
+      margin: 0; }
+    .tooltip li.testtip {
+      background: #6677af; }
+    .tooltip li em {
+      display: block;
+      text-decoration: underline;
+      margin-bottom: 5px; }

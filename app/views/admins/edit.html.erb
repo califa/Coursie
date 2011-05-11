@@ -1,11 +1,11 @@
 <% @page_title = "Edit Admin: #{@admin.name}" -%>
 
-<%= link_to("<< Back to List", admins_path, :class => 'back-link') %>
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
 
-<div class="admin edit">
-  <h2>Edit Admin</h2>
-
-  <%= form_for(@admin) do |f| %>
+<section class="admin edit">
+  <h1>Edit Admin</h1>
+  <div class="section_container">
+  <%= form_for(@admin, :url => admin_path(@admin.id), :html => { :method => :put }) do |f| %>
     
   	<%= render(:partial => 'form', :locals => {:f => f} ) %>
 	
@@ -14,3 +14,4 @@
     </div>
   <% end %>
 </div>
+</section>

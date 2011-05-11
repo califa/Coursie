@@ -2,9 +2,10 @@
 
 <%= link_to("<< Back to List", users_path, :class => 'back-link') %>
 
-<div class="user new">
-  <h2>Create User</h2>
 
+<section class="user new">
+  <h1>Create User</h1>
+  <div class="section_container">
   <%= form_for(@user) do |f| %>
 
     <%= render(:partial => 'form', :locals => {:f => f} ) %>
@@ -15,3 +16,4 @@
   
   <% end %>
 </div>
+</section>

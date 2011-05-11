@@ -129,23 +129,38 @@ header {
 	padding: 12px;
     text-align: center;
     color: #fff;
-	nav {
-	    display: block;
-	    width: 940px;
-	    margin: 0 auto;
-		a {
 
+	nav {
+
+	    background: blue;
+	    margin: 0 auto;
+	     width: 940px;
+		a {
+          color: #fff;
 		}
 		li {
-			float:left;
-			margin-left: 20px;
+
+			float:right;
+			margin-right: 10px;
+            margin-left: 20px;
             color: #fff;
+            em {
+                font-style:italic;
+            }
 			a {
 	            color: $list1;
 			    font-style:none;
 	            font-weight:bold;
 	            &:hover { color: $list2; }
 			}
+            &.logo {
+                    font: 20pt Arvo, Rockwell;
+                    margin-top: -8px;
+                    margin-left: -16px;
+                    height:20px;
+                    width: 200px;
+                    float:left;
+                }
 		}
 		input {
 			width:280px;
@@ -227,7 +242,7 @@ ul.todo_list {
 		margin:auto;
 	}
     hgroup {
-        background:blue;
+        //background:blue;
         height: 70px;
         nav {
             margin:auto;
@@ -290,12 +305,13 @@ ul.todo_list {
             // Today
 
              div.task_contain {
-                 width: 26px;
-                 height: 26px;
-                 padding: 7px;
+                 width: 28px;
+                 height: 28px;
+                 padding: 6px;
                  div.task {
                     float:right;
                     margin-left:3px;
+                    margin-bottom:3px;
                     width:7px;
                     height:7px;
                     background:url(../images/calendar.png);
@@ -304,20 +320,14 @@ ul.todo_list {
                     text-indent: -9999px;
                     &.completed { background-positiong: 7px 0; }
                     &.task_alert {
-                        float:left;
-                        margin-right:3px;
-                        margin-left:0;
                         background-position: 14px 0;
-                        margin-top:19px;
                         }
                     &.task_test {
-                        float:left;
-                        bottom:7px;
-                        margin-right:3px;
-                        margin-left:0;
-                        background-position: 21px 0;
-                        margin-top:19px;
+                        background-position: 7px 0;
                         }
+                    &:nth-child(3n+3) {
+                        margin:0;
+                    }
                  }
              }
 
@@ -327,19 +337,30 @@ ul.todo_list {
                 padding: 0;
                 width: 40px;
                 height: 40px;
-                overflow:hidden;
+                a.opentip {
+                    display:block;
+                    width:40px;
+                    height:40px;
+                    margin-top:-40px;
+                    position:absolute;
+                    z-index:1000;
+                }
+                //overflow:hidden;
                 &.today {
                     width:28px;
                     height:28px;
                     border: 4px solid $red;
-
                     div.task_contain {
                          width: 26px;
                          height: 26px;
                          padding: 3px;
                      }
+                    a.opentip {
+                     margin: -36px 0 0 -4px;
+                    }
 
                 }
+
              }
 
         }
@@ -359,6 +380,7 @@ ul.todo_list {
 
 .section_class_dashboard {
 	width: 940px;
+    margin-bottom: 15px;
 	nav ul.stripelist {
 		width: 280px;
 		font-weight:bold;
@@ -451,10 +473,33 @@ ul.todo_list {
 
 .adminarea {
 
+    .spacer { height:40px }
+    ul.stripelist {
+        text-align:center;
+    }
+
+
+
+    a {
+        color: #073c95;
+        font-style: italic;
+        &:hover {
+        color: $blue;
+        }
+    }
     div.content {
         width:600px;
         margin: 0 auto;
     }
+
+    nav { width: 600px;
+        li { margin-right: 0x; }
+        .logo { width: 250px; }
+        a { color: #fff;
+        &:hover { color: #fff; }
+        }
+    }
+
     section {
         width:100%;
     }
@@ -463,7 +508,7 @@ ul.todo_list {
     }
     h1 { text-align: center; display:block; width: 100%;}
     .section_adminmenu {
-            width: 400px;
+            //width: 400px;
         div.section_container {
         text-align:center;
         a { color: $brown; font-weight:bold}
@@ -484,6 +529,9 @@ ul.todo_list {
           background: $brown;
         }
       }
+      &.testbar a {
+        background: #073c95;
+      }
     }
     .num {
       text-align: center;
@@ -495,17 +543,29 @@ ul.todo_list {
 
     table {
         width: 100%;
-
+        @include border-radius(5px,5px,5px,5px);
         tr {
 		// Checkers Coloring
-            td { padding: 10px; }
-		    background: $list1;
-            text-align: center;
-            &:nth-child(even) { background:$list2; }
+        @include border-radius();
+            td {
+                 padding: 10px;
+                 background: $list1;
+                 &.testbar {
+                    background:#dadce8;
+                 }
+            }
 
+            &:nth-child(even) { td {background:$list2;
+                    &.testbar {
+                    background:#e9eaf5;
+                 }
+
+            } }
+
+            .actions a:hover { background: $brown; }
 
             // Rounded Corners
-            &:nth-child(2) {
+            &:first-child {
                     td {
                         &:first-child {
                             @include border-radius(5px,0,0,0);
@@ -516,8 +576,8 @@ ul.todo_list {
                     }
                 }
             &:last-child {
+                    @include border-radius();
                     td {
-
                         &:first-child {
                             @include border-radius(0,0,0,5px);
                         }
@@ -551,4 +611,87 @@ ul.todo_list {
     .field_with_errors {
         color: $red;
     }
+
+    table.toplist {
+         tr:nth-child(2) {
+           td:first-child { @include border-radius(5px,0,0,0); }
+           td:last-child {@include border-radius(0,5px,0,0);}
+         }
+         tr:nth-child(2):only-child {
+           td:first-child { @include border-radius(5px,0,0,5px); }
+           td:last-child {@include border-radius(0,5px,5px,0);}
+           td:first-child:last-child {@include border-radius(5px,5px,5px,5px);}
+         }
+    }
+    table.sidelist {
+        tr {
+            &:first-child {
+              td:first-child {
+                @include border-radius(5px,0,0,0)
+              }
+            }
+            &:last-child {
+              td:first-child {
+                @include border-radius(0,0,0,5px)
+              }
+            }
+        }
+
+    }
+    li.reference-name {
+        text-weight: bold;
+    }
+    div.actions { margin-right: -10px;}
+
+
+    .errorExplanation {
+
+        li {
+            text-align: center;
+            @include border-radius(5px, 5px, 5px, 5px);
+            background: $red;
+            color: #fff;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+    }
 }
+
+
+//Tool tip
+
+         .tooltip {
+         	display:none;
+         	background:$list1;
+         	@include border-radius(10px, 0, 10px, 10px);
+            border: 4px solid #c6c5b6;
+         	padding:10px;
+         	width:200px;
+         	font-size:11px;
+            z-index:1000;
+         	color:#fff;
+            .tipdate {
+                font: 12pt Arvo, Rockwell;
+                color: $brown;
+                display: block;
+                margin-bottom:10px;
+            }
+            li {
+                background: $red;
+                @include border-radius(5px, 5px, 5px, 5px);
+                padding: 5px;
+                margin-bottom:10px;
+                &:last-child {
+                    margin:0;
+                }
+                &.testtip {
+                    background: $blue;
+                }
+                em {
+                    display: block;
+                    text-decoration: underline;
+                    margin-bottom:5px;
+                }
+            }
+         }

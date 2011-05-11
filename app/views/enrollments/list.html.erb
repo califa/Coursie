@@ -1,25 +1,25 @@
 <% @page_title = "Enrollments List" %>
 
-<div class="enrollment list">
-  <h2><%= pluralize(@enrollments.size, "Enrollment")%> <% if params[:course_id] %><%="for #{Course.find(params[:course_id]).name}"%><%end%></h2>
-  
-  <%= link_to("Add New Enrollment", new_enrollment_path, :class => 'action new') %>
-
-  <table class="listing" summary="Enrollment list">
+<div class="actions"><%= link_to("Add New Enrollment", new_enrollment_path, :class => 'action new') %></div>
+<section class="enrollment list">
+<h1><%= pluralize(@enrollments.size, "Enrollment")%> <% if params[:course_id] %><%="for #{Course.find(params[:course_id]).name}"%><%end%></h1>
+<div class="section_container">
+  <table class="listing toplist" summary="Enrollment list">
     <tr class="header">
-      <th>Student</th>
-      <th>Course</th>
-      <th>Actions</th>
+      <th class="lister">Student</th>
+      <th class="lister">Course</th>
+      <th></th>
     </tr>
 
     <% @enrollments.each do |enrollment| %>
     <tr>
-      <td><%= enrollment.student.list_name %></td>
-      <td><%= enrollment.course.name %></td>
+      <td><%= link_to(enrollment.student.list_name, student_path(enrollment.student.id), :class => 'action edit') %></td>
+      <td><%= link_to(enrollment.course.name, course_path(enrollment.course.id), :class => 'action edit') %></td>
       <td class="actions">
         <%= link_to("Delete", delete_enrollment_path(enrollment.id), :class => 'action delete') %>
       </td>
     </tr>
     <% end %>
   </table>
-</div>
+  </div>
+  </section>

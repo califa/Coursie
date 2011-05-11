@@ -19,13 +19,13 @@
   </tr>
   <tr> <!--   map do |x| format("%02d", x) end -->
     <th><%= f.label(:time, "Starting Time") %></th>
-    <td><%= select_tag :time_hours, options_for_select(("07".."23").to_a, @course.time.to_s.slice(0,2) ) %> :
-        <%= select_tag :time_minutes, options_for_select(("00".."59").step(5).to_a, @course.time.to_s.slice(2,2) ) %></td>
+    <td><%= f.select :time_hours, options_for_select(("07".."23").to_a, @course.time.to_s.slice(0,2) ) %> :
+        <%= f.select :time_minutes, options_for_select(("00".."59").step(5).to_a, @course.time.to_s.slice(2,2) ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:duration, "Duration") %></th>
-    <td><%= select_tag :duration_hours, options_for_select(("00".."05").to_a, @course.duration.to_s.slice(0,2) ) %> :
-        <%= select_tag :duration_minutes, options_for_select(("00".."59").step(5).to_a, @course.duration.to_s.slice(2,2) ) %></td>
+    <td><%= f.select :duration_hours, options_for_select(("00".."05").to_a, @course.duration.to_s.slice(0,2) ) %> :
+        <%= f.select :duration_minutes, options_for_select(("00".."59").step(5).to_a, @course.duration.to_s.slice(2,2) ) %></td>
   </tr>
   <tr>
     <th><%= f.label(:open) %></th>

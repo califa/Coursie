@@ -37,23 +37,34 @@
         <h1>Calendar</h1>
         <a href="#" class="settings">Settings</a>
         <div class="section_container">
+
+            <% @tasks = get_tasks(nil,true) %>
+            <%= calendar_for(@tasks) do |t| %>
             <hgroup>
                 <nav>
                     <button type="button" name="prev">Prev</button>
-                    <span class="month">Feb 2011.</span>
+                    <span class="month"><%= t %></span>
                     <button type="button" name="next">Next</button>
                 </nav>
             </hgroup>
-            <%= calendar_for(@tasks) do |t| %>
               <%= t.head('sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat') %>
               <%= t.day do |day, tasks| %>
                 <% tasks = tasks.slice!(0,9) %>
                 <div class="task_contain">
-                <% day.day %>
-                <% tasks.each do |task, type| %>
-                    <div class="task<%="task_test" if task.test%>"><%= h(task.name) %></div>
-                <% end %>
+                    <% day.day %>
+                    <% tasks.each do |task| %>
+                        <div class="task<%=" task_test" if task.test%>"><%= h(task.name) %></div>
+                    <% end %>
                 </div>
+                <% if tasks.size > 0 %><a class="opentip" href="#">&nbsp;</a>
+                <div class="tooltip">
+                <span class="tipdate"><%= day.strftime("%A, %B %e") %></span>
+                      <ul>
+                      <% tasks.each do |task| %>
+                          <li<%if task.test%> class="testtip"<%end%>><em><%= h(task.class) %></em><%= h(task.name) %></li>
+                      <% end %>
+                      </ul>
+                </div><%end%>
               <% end %>
             <% end %>
 
@@ -83,7 +94,7 @@
                 <% hours = course.time
                    minutes = course.time.slice!(2,2)
                    ampm = hours.to_i >= 12 ? "AM" : "PM"
-                   hours = (hours.to_i - 12).to_s.gsub('0', '') if hours.to_i > 12%>
+                   hours = hours.to_i > 12 ? hours.to_i - 12 : hours.to_i %>
                            <span class="time"><%= "#{course.day}s at #{hours}:#{minutes}#{ampm}" %> <%= ", #{course.place}"  if !course.place.blank? %></span>
                         </div>
                 </hgroup>
@@ -123,6 +134,7 @@
                  </li>
                  <% end
                      end %>
+
                 </ul>
                 </div>
             </div>
@@ -135,5 +147,4 @@
         </div>
     </section>
 
-
-
+</div>

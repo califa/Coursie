@@ -1,11 +1,11 @@
 <% @page_title = "Edit Student: #{@student.name}" -%>
 
-<%= link_to("<< Back to List", students_path, :class => 'back-link') %>
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
 
-<div class="student edit">
-  <h2>Edit Student</h2>
-
-  <%= form_for(@student) do |f| %>
+<section class="student edit">
+  <h1>Edit Student</h1>
+  <div class="section_container">
+  <%= form_for(@student, :url => student_path(@student.id), :html => { :method => :put }) do |f| %>
     
   	<%= render(:partial => 'form', :locals => {:f => f} ) %>
 	
@@ -14,3 +14,4 @@
     </div>
   <% end %>
 </div>
+</section>

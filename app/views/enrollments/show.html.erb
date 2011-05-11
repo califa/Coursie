@@ -13,7 +13,7 @@
     </tr>
     <tr>
       <th>Student</th>
-      <td><%= @enrollment.student.name %></td>
+      <td><%= link_to(@enrollment.student.name, student_path(@enrollment.student.id), :class => 'action edit') %></td>
     </tr>
   </table>
   

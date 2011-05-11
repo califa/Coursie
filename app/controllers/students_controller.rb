@@ -3,14 +3,16 @@ class Event < Struct.new(:class, :name, :date, :test); end
 class StudentsController < ApplicationController
 
 
-  before_filter :confirm_logged_in_student, :except => [:edit, :update]
+  before_filter :confirm_logged_in_student, :except => [:edit, :update, :show]
+  before_filter :confirm_logged_in_admin, :only => [:edit, :update, :show]
 
   helper_method :human_date
   helper_method :get_tasks
 
   require 'table_builder'
   require 'table_builder/calendar_helper'
-  layout 'dashboard'
+
+  layout :choose_layout
 
   def index
     @student = Student.find(session[:user_id])
@@ -18,9 +20,24 @@ class StudentsController < ApplicationController
     @tasks = get_tasks
   end
 
-  def get_tasks(list_course=nil)
+  def get_tasks(list_course=nil,calendar=nil)
     tasks = []
-    if list_course
+    if calendar
+      @student.courses.each do |course|
+        course.assignments.each do |assignment|
+          tasks << Event.new(course.name, assignment.title, assignment.due_date, assignment.test)
+        end
+      end
+      tasks.sort! do |x, y|
+        if x[:test] == y[:test]
+          0
+        elsif x[:test] == true
+          -1
+        elsif x[:test] == false
+          1
+        end
+      end
+    elsif list_course
       list_course.assignments.each do |assignment|
         tasks << Event.new(list_course.name, assignment.title, assignment.due_date, assignment.test)
       end
@@ -36,7 +53,7 @@ class StudentsController < ApplicationController
       tasks = tasks.slice!(0,7)
     end
     tasks
-  end
+    end
 
   def human_date(date)
     string = ""
@@ -67,6 +84,10 @@ class StudentsController < ApplicationController
       string = "Tomorrow!"
     end
 
+    if date == now
+          string = "Today!"
+        end
+
     if date < now
       string = "Overdue!"
     end
@@ -89,4 +110,16 @@ class StudentsController < ApplicationController
     end
   end
 
+  def show
+    @student = Student.find(params[:id])
+  end
+
+  private
+  def choose_layout
+    if [ 'edit', 'update', 'show' ].include? action_name
+      'admin'
+    else
+      'dashboard'
+    end
+  end
 end

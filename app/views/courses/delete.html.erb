@@ -2,18 +2,25 @@
 
 <%= link_to("<< Back to List", courses_path ) %>
 
-<div class="course delete">
-  <h2>Delete Course</h2>
-  
-  <%= form_for(:course, :url => course_path(@course.id), :html => { :method => :delete }) do |f| -%>
 
-    <p>Are you sure you want to permanently delete this course?</p>
-  
-    <p class="reference-name"><%= @course.name %></p>
-  
-    <div class="form-buttons">
+
+<section class="course delete section_center">
+  <h1>Delete Course</h1>
+  <div class="section_container">
+    <%= form_for(:assignment, :url => course_path(@course.id), :html => { :method => :delete }) do |f| -%>
+    <ul class="stripelist">
+
+      <li>Are you sure you want to permanently delete this course?</li>
+
+      <li class="reference-name"><%= @course.name %></li>
+
+      <li class="form-buttons">
       <%= submit_tag("Delete Course") %>
-    </div>
-    
-  <% end %>
-</div>
+    </li>
+
+    </ul>
+    <% end %>
+  </div>
+</section>
+
+

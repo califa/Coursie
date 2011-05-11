@@ -4,8 +4,10 @@
 
 <% a_type = @assignment.test ? "Test" : "Assignment" %>
 
-<div class="assignment show">
-  <h2><%= a_type %> Detail View</h2>
+
+<section class="assignment show">
+  <h1><%= a_type %> Detail View</h1>
+  <div class="section_container">
 
   <table summary="<%= a_type %> detail view">
     <tr>
@@ -39,3 +41,4 @@
   </table>
   
 </div>
+</section>

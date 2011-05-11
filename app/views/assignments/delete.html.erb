@@ -1,19 +1,25 @@
 <% @page_title = "Delete assignment: #{@assignment.title}" %>
 
 <%= link_to("<< Back to List", assignments_path ) %>
+<% a_type = @assignment.test ? "Test" : "Assignment" %>
 
-<div class="assignment delete">
-  <h2>Delete assignment</h2>
-  
-  <%= form_for(:assignment, :url => assignment_path(@assignment.id), :html => { :method => :delete }) do |f| -%>
+<section class="assignment edit section_center">
+  <h1>Delete <%= a_type %></h1>
+  <div class="section_container">
+    <%= form_for(:assignment, :url => assignment_path(@assignment.id), :html => { :method => :delete }) do |f| -%>
+    <ul class="stripelist">
 
-    <p>Are you sure you want to permanently delete this assignment?</p>
-  
-    <p class="reference-name"><%= @assignment.title %></p>
-  
-    <div class="form-buttons">
+      <li>Are you sure you want to permanently delete this assignment?</li>
+
+      <li class="reference-name"><%= @assignment.title %><%" from #{@assignment.course.name}" if @assignment.course %></li>
+
+      <li class="form-buttons">
       <%= submit_tag("Delete assignment") %>
-    </div>
-    
-  <% end %>
-</div>
+    </li>
+
+    </ul>
+    <% end %>
+  </div>
+</section>
+
+

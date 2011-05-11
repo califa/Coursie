@@ -9,7 +9,7 @@ class Course < ActiveRecord::Base
 
   before_validation :get_time_and_duration
  # before_save :capitalize_name
-
+  validates_presence_of :teacher
   validates_presence_of :name
   validates_length_of :name, :within => 3..255
   validates_presence_of :day
@@ -27,8 +27,10 @@ class Course < ActiveRecord::Base
   def get_time_and_duration
     #self.time = "#{format("%02d", time_hours.to_i)}#{format("%02d", time_minutes.to_i)}"
     #self.duration = "#{format("%02d", duration_hours.to_i)}#{format("%02d", duration_minutes.to_i)}"
-    self.time = "#{time_hours}#{time_minutes}"
-    self.duration = "#{duration_hours}#{duration_minutes}"
+    self.time = "#{self.time_hours}#{self.time_minutes}"
+    self.duration = "#{self.duration_hours}#{self.duration_minutes}"
+    puts "This is the time: #{time_hours}"
+    puts self.duration
   end
 
   def capitalize_name

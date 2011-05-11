@@ -1,0 +1,55 @@
+<% @page_title = "Show Teacher: #{@teacher.name}" %>
+
+<%= link_to("<< User List", users_path, :class => 'back-link') %>
+
+<div class="actions"><%= link_to('Edit', edit_teacher_path(@teacher.id), :class => 'action edit') %></div>
+      </td>
+
+<div class="teacher show">
+  <section>
+  <h1>Teacher Details</h1>
+  <div class="section_container">
+  <table class="listing sidelist" summary="Teacher detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @teacher.name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @teacher.email %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @teacher.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @teacher.updated_at %></td>
+    </tr>
+  </table>
+  </div>
+  </section>
+
+  <section>
+  <h1>Courses</h1>
+  <div class="section_container">
+    <table class="listing toplist" summary="Enrollment list">
+    <tr class="header">
+      <th class="lister">Name</th>
+      <th>&nbsp;</th>
+    </tr>
+    <% @teacher.courses.each do |course| %>
+    <tr>
+      <td class="center"><%= link_to(course.name, course_path(course.id), :class => 'action show') %></td>
+      <td class="actions">
+        <%= link_to("Edit", edit_course_path(course.id), :class => 'action edit') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  </div>
+  </section>
+
+  <div class="spacer">&nbsp;</div>
+  
+</div>

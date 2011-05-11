@@ -5,7 +5,7 @@
     <h1>Admin Menu</h1>
       <div class="section_container">
           <ul class="stripelist">
-            <li><%= link_to("Manage Users", users_path) if session[:type] == "Admin"%></li>
+            <% if session[:type] == "Admin" %><li><%= link_to("Manage Users", users_path)%></li><%end%>
             <li><%= link_to("Manage Courses", courses_path) %></li>
           </ul>
       </div>

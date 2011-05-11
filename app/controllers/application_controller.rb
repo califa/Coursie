@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
           redirect_to(:controller => 'students', :action => 'index')
         end
         if session[:type] == "Teacher"
-          redirect_to(:controller => 'access', :action => 'menu')
+          flash[:notice] = "Section restricted for teachers."
+          redirect_to(courses_path)
         end
     end
   end
@@ -38,9 +39,11 @@ class ApplicationController < ActionController::Base
       return false # halts the before_filter
     else
         if session[:type] == "Teacher"
+          flash[:notice] = "Only students get the dashboard!"
           redirect_to(:controller => 'access', :action => 'menu')
         end
         if session[:type] == "Admin"
+          flash[:notice] = "Only students get the dashboard!"
           redirect_to(:controller => 'access', :action => 'menu')
         end
       end

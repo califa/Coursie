@@ -1,26 +1,28 @@
 <% @page_title = "Assignments List" %>
 
 <div class="assignment list">
-  <h2><%= pluralize(@assignments.size, "Assignment")%> <% if params[:course_id] %><%="for #{Course.find(params[:course_id]).name}"%><%end%></h2>
   
-  <%= link_to("Add New Assignment", new_assignment_path, :class => 'action new') %>
+  <div class="actions"><%= link_to("Add New Assignment", new_assignment_path, :class => 'action new') %></div>
 
-  <table class="listing" summary="Assignment list">
+  <section>
+    <h1><%= pluralize(@assignments.size, "Assignment")%> <% if params[:course_id] %><%="for #{Course.find(params[:course_id]).name}"%><%end%></h1>
+  <div class="section_container">
+  <table class="listing toplist" summary="Assignment list">
     <tr class="header">
-      <th>Assignment</th>
-      <th>Test?</th>
-      <th>Actions</th>
+      <th class="lister">Assignment</th>
+      <th></th>
     </tr>
 
     <% @assignments.each do |assignment| %>
     <tr>
-      <td><%= link_to(assignment.title, assignment_path(assignment.id), :class => 'action show') %></td>
-      <td class="center"><%= status_tag(assignment.test) %></td>
-      <td class="actions">
+      <td<%if assignment.test%> class="testbar"<%end%>><%= link_to(simple_format(word_wrap(assignment.title, :line_width => 80)), assignment_path(assignment.id), :class => 'action show') %></td>
+      <td class="actions<%= " testbar"if assignment.test%>">
         <%= link_to("Edit", edit_assignment_path(assignment.id), :class => 'action edit') %>
         <%= link_to("Delete", delete_assignment_path(assignment.id), :class => 'action delete') %>
       </td>
     </tr>
     <% end %>
   </table>
+  </section>
+  </div>
 </div>

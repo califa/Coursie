@@ -2,15 +2,17 @@
 
 <%= link_to("<< Back to List", courses_path, :class => 'back-link') %>
 
+<div class="actions"><%= link_to('Edit', edit_course_path(@course.id), :class => 'action edit') %></div>
+
 <div class="course show">
   <section>
   <h1>Course Details</h1>
   <div class="section_container">
-  <table summary="Course detail view">
+  <table class="listing sidelist" summary="Course detail view">
     <tr>
       <th>Teacher</th>
       <% if @course.teacher %>
-      <td><%= @course.teacher.name %></td>
+      <td><%= link_to(@course.teacher.name, teacher_path(@course.teacher.id), :class => 'action show') %></td>
       <% else %>
       <td>&nbsp;</td>
       <% end %>
@@ -50,19 +52,17 @@
   <section>
   <h1>Assignments</h1>
   <div class="section_container">
-  <table class="listing" summary="Assignment list">
+  <table class="listing toplist" summary="Assignment list">
     <tr class="header">
       <th class="lister">Assignment</th>
-      <th class="num">Test?</th>
       <th class="num">Due Date</th>
       <th>&nbsp;</th>
     </tr>
     <% @course.assignments.each do |assignment| %>
     <tr>
-      <td><%= link_to(assignment.title, assignment_path(assignment.id), :class => 'action show') %></td>
-      <td class="num"><%= status_tag(assignment.test) %></td>
-      <td class="num"><%= assignment.due_date %></td>
-      <td class="actions">
+      <td<%if assignment.test%> class="testbar"<%end%>><%= link_to(simple_format(word_wrap(assignment.title, :line_width => 65)), assignment_path(assignment.id), :class => 'action show') %></td>
+      <td class="num<%= " testbar"if assignment.test%>"><%= assignment.due_date %></td>
+      <td class="actions<%= " testbar"if assignment.test%>">
         <%= link_to("Edit", edit_assignment_path(assignment.id), :class => 'action edit') %>
         <%= link_to("Delete", delete_assignment_path(assignment.id), :class => 'action delete') %>
       </td>
@@ -75,14 +75,14 @@
   <section>
   <h1>Enrollments</h1>
   <div class="section_container">
-    <table class="listing" summary="Enrollment list">
+    <table class="listing toplist" summary="Enrollment list">
     <tr class="header">
       <th class="lister">Name</th>
       <th>&nbsp;</th>
     </tr>
     <% @course.students.each do |student| %>
     <tr>
-      <td class="center"><%= student.name %></td>
+      <td class="center"><%= link_to(student.name, student_path(student.id), :class => 'action show') %></td>
       <td class="actions">
         <%= link_to("Remove", delete_enrollment_path(student.id), :class => 'action delete') %>
       </td>
@@ -92,6 +92,6 @@
   </div>
   </section>
 
-
+  <div class="spacer">&nbsp;</div>
   
 </div>

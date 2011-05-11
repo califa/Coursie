@@ -1,10 +1,10 @@
 <% @page_title = "Create Assignment" %>
 
-<%= link_to("<< Back to List", assignments_path, :class => 'back-link') %>
 
-<div class="assignment new">
-  <h2>Create Assignment</h2>
 
+<section class="assignment new">
+  <h1>Create Assignment</h1>
+  <div class="section_container">
   <%= form_for(@assignment) do |f| %>
   
     <%= render(:partial => 'form', :locals => {:f => f}) %>
@@ -15,3 +15,4 @@
     
   <% end %>
 </div>
+</section>

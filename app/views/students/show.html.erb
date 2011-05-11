@@ -1,0 +1,55 @@
+<% @page_title = "Show Student: #{@student.name}" %>
+
+<%= link_to("<< User List", users_path, :class => 'back-link') %>
+
+<div class="actions"><%= link_to('Edit', edit_student_path(@student.id), :class => 'action edit') %></div>
+      </td>
+
+<div class="student show">
+  <section>
+  <h1>Student Details</h1>
+  <div class="section_container">
+  <table class="listing sidelist" summary="Student detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @student.name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @student.email %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @student.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @student.updated_at %></td>
+    </tr>
+  </table>
+  </div>
+  </section>
+
+  <section>
+  <h1>Enrollments</h1>
+  <div class="section_container">
+    <table class="listing toplist" summary="Enrollment list">
+    <tr class="header">
+      <th class="lister">Name</th>
+      <th>&nbsp;</th>
+    </tr>
+    <% @student.enrollments.each do |enrollment| %>
+    <tr>
+      <td class="center"><%= link_to(enrollment.course.name, course_path(enrollment.course.id), :class => 'action show') %></td>
+      <td class="actions">
+        <%= link_to("Remove", delete_enrollment_path(enrollment.id), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  </div>
+  </section>
+
+  <div class="spacer">&nbsp;</div>
+  
+</div>

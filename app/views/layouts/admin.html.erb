@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
  <head>
-    <title>Ruby LMS| <%= @page_title || 'Admin Area' %></title>
+    <title>Ruby LMS | <%= @page_title || 'Admin Area' %></title>
     <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
-    <%= javascript_include_tag('jquery-1.6.min') %>
+    <%= javascript_include_tag('jquery-1.6.min', 'jquery.tools.min') %>
     <%= javascript_include_tag('tabs') %>
   </head>
   <body class="adminarea">
@@ -11,22 +11,24 @@
     <header>
       <nav>
           <ul>
-            <li>Ruby LMS <%= session[:type] %> Menu</li>
-            <li>Logged in as <%= User.find_by_id(session[:user_id]).name %></li>
             <li><%= link_to("Logout", :controller => 'access', :action => 'logout') %></li>
+            <li>Logged in as <em><%= User.find_by_id(session[:user_id]).name %></em></li>
+            <li class="logo"><%= link_to("#{session[:type]} Menu", :controller => 'access', :action => 'menu') %></li>
           </ul>
       </nav>
     </header>
     <% end %>
     <div id="main">
-      <% if !flash[:notice].blank? %>
-      <div class="notice">
-        <%= flash[:notice] %>
-      </div>
-      <% end %>
+
       <div class="content">
+              <% if !flash[:notice].blank? %>
+      <ul class="alerts">
+		<li class="exam_alert"> <%= flash[:notice] %></li>
+	  </ul>
+      <% end %>
         <%= yield %>
       </div>
     </div>
+  <div class="spacing">&nbsp;</div>
   </body>
 </html>

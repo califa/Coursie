@@ -1,26 +1,34 @@
 <% @page_title = "Users List" %>
 
 <%= link_to("<< Back to Menu", {:controller => 'access', :action => 'menu'}, :class => 'back-link') %>
+<div class="actions"><%= link_to('Add New User', new_user_path, :class => 'action new') %></div>
+<section class="user list">
+  <h1>User List</h1>
+  <div class="section_container">
 
-<div class="user list">
-  <h2>Users</h2>
 
-  <%= link_to('Add New User', new_user_path, :class => 'action new') %>
-
-  <div><%= pluralize(@users.size, 'user') %> found</div>
-  
-  <table class="listing" summary="Users list">
+  <table class="listing toplist" summary="Users list">
     <tr>
-      <th>Class</th>
-      <th>Email</th>
-      <th>Name</th>
-      <th>Actions</th>
+      <th class="lister">Class</th>
+      <th class="lister">Email</th>
+      <th class="lister">Name</th>
+      <th></th>
     </tr>
     <% @users.each do |user| %>
     <tr class="<%= cycle('odd', 'even') %>">
-      <td><%= user.class %></td>
+      <td class=""><%= user.class %></td>
       <td><%= user.email %></td>
-      <td><%= user.name %></td>
+      <td>
+
+        <% if user.class == Teacher %>
+            <%= link_to(user.name, teacher_path(user.id), :class => 'action edit') %>
+        <% elsif user.class == Student %>
+            <%= link_to(user.name, student_path(user.id), :class => 'action edit') %>
+        <% else %>
+            <%= user.name %>
+        <% end %>
+
+      </td>
       <td class="actions">
         <% if user.class == Admin %>
             <%= link_to('Edit', edit_admin_path(user.id), :class => 'action edit') %>
@@ -38,3 +46,4 @@
   </table>
 
 </div>
+</section>

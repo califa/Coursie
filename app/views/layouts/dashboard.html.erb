@@ -9,33 +9,39 @@
     <%= javascript_include_tag('jquery-1.6.min') %>
     <%= javascript_include_tag('tabs') %>
     <%= csrf_meta_tag %>
+     <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+
 </head>
 <body>
 
 
     <header>
+
         <nav>
+
             <ul>
-                <li>
-                    Signed in as <%=@student.name %>
-                </li>
-                <!--<li>
-                    <form action="#" method="get">
-                    <input type="search" value="Search classes, homework and forums..." />
-                    </form>
-                </li>
-                <li>
-                    <a href="#">To-Do</a>
-                </li>
-                <li>
-                    <a href="#">Classes</a>
-                </li>
-                <li>
-                    <a href="#">Inbox</a>
-                </li> -->
+
                 <li>
                   <%= link_to("Logout", :controller => 'access', :action => 'logout') %>
                 </li>
+                <li>
+                    Signed in as <em><%=@student.name %></em>
+                </li>
+              <li class="logo">Ruby LMS</li>
+                  <!--<li>
+                        <form action="#" method="get">
+                        <input type="search" value="Search classes, homework and forums..." />
+                        </form>
+                    </li>
+                    <li>
+                        <a href="#">To-Do</a>
+                    </li>
+                    <li>
+                        <a href="#">Classes</a>
+                    </li>
+                    <li>
+                        <a href="#">Inbox</a>
+                    </li> -->
             </ul>
         </nav>
     </header>
@@ -63,6 +69,11 @@
 
     </div>
 
+<script>
+$(document).ready(function() {
+    $(".opentip").tooltip({ effect: 'slide', position: "bottom left", opacity: 1, offset: [0,10]});
+});
+</script>
 
 </body>
 </html>

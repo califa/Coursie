@@ -44,6 +44,7 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find(params[:id])
     # Update the object
+    puts params[:course]
     if @course.update_attributes(params[:course])
       # If update succeeds, redirect to the list action
       flash[:notice] = "Course updated."
