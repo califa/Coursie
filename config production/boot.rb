@@ -1,7 +1,7 @@
-#Gem.clear_paths
+Gem.clear_paths
 
 require 'rubygems'
-#require 'bundler'
+require 'bundler'
 
 # Set up gems listed in the Gemfile.
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)

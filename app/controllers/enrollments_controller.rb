@@ -30,7 +30,7 @@ class EnrollmentsController < ApplicationController
     if @enrollment.save
       # If save succeeds, redirect to the list action
       flash[:notice] = "Enrollment created."
-      redirect_to(enrollment_path(@enrollment.id))
+      redirect_to(enrollments_path)
     else
       @courses = Course.order('name ASC')
       render('new')

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
  <head>
-    <title>Ruby LMS | <%= @page_title || 'Admin Area' %></title>
+    <title>Coursie | <%= @page_title || 'Admin Area' %></title>
     <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
     <%= javascript_include_tag('jquery-1.6.min', 'jquery.tools.min', 'overlabel') %>
     <%= javascript_include_tag('tabs') %>
   </head>
   <body class="adminarea">
-    <% unless @page_title == "Admin Login" %>
+    <% unless @page_title == "Login" %>
     <header>
       <nav>
           <ul>
@@ -19,7 +19,7 @@
     </header>
     <% end %>
     <div id="main">
-
+      <% if @page_title == "Login"%><div class="spacer">&nbsp;</div><%end%>
       <div class="content">
       <%if @page_title == "Admin Login" %><div class="spacer"></div><%end%>
               <% if !flash[:notice].blank? %>
@@ -30,6 +30,6 @@
         <%= yield %>
       </div>
     </div>
-  <div class="spacing">&nbsp;</div>
+  <div class="spacer">&nbsp;</div>
   </body>
 </html>

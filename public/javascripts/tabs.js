@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
     var tabs = [];
     var tabContainers = [];
     $('ul.tabs a').each(function () {

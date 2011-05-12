@@ -261,9 +261,8 @@ div.task {
 .section_calendar {
 
 	width: 300px;
-	height: 300px;
 	table {
-		margin:auto;
+    margin:auto;
 	}
     hgroup {
         //background:blue;
@@ -397,6 +396,8 @@ hgroup h3 {  font: 12pt Arvo, Rockwell; text-align:center; color: $brown; }
 
 .section_class_dashboard {
 	width: 940px;
+    height: 300px;
+    min-height: 300px;
     margin-bottom: 15px;
 	nav ul.stripelist {
 		width: 280px;
@@ -714,17 +715,19 @@ hgroup h3 {  font: 12pt Arvo, Rockwell; text-align:center; color: $brown; }
          }
 .login_header {
     font: 80pt Arvo, Rockwell;
+    width:500px;
+    text-align:center;
+    display: block;
     margin: 0 auto;
     color:$red;
     text-shadow: $list2 4px 4px;
-    margin-bottom:50px;
-    margin-left:20px;
+    margin-bottom:30px;
     }
 
 .login {
     width: 100%;
     li {
-        margin: 0;
+    margin: 0;
     }
 
     #email {

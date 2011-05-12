@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ruby LMS Student Dashboard</title>
+	<title>Coursie</title>
 	<link href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag('reset', 'style', :media => 'all') %>
-    <%= javascript_include_tag('jquery-1.6.min') %>
+    <%= javascript_include_tag('jquery-1.6') %>
     <%= javascript_include_tag('tabs') %>
     <%= csrf_meta_tag %>
-     <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+
 
 </head>
 <body>
@@ -27,7 +27,7 @@
                 <li>
                     Signed in as <em><%=@student.name %></em>
                 </li>
-              <li class="logo">Ruby LMS</li>
+              <li class="logo">Coursie</li>
                   <!--<li>
                         <form action="#" method="get">
                         <input type="search" value="Search classes, homework and forums..." />
@@ -69,11 +69,11 @@
 
     </div>
 
-<script>
+<!--<script>
 $(document).ready(function() {
     $(".opentip").tooltip({ effect: 'slide', position: "bottom left", opacity: 1, offset: [0,10]});
 });
-</script>
+</script>-->
 
 </body>
 </html>

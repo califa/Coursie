@@ -85,6 +85,11 @@
                    <% @student.courses.each_with_index do |course, i| %>
                     <li><a <% if i == 0 %>class="selected" <% end %>href="<%= "#select_#{course.name.downcase.gsub(' ', '').gsub(':', '')}" %>"><%= course.name %></a></li>
                    <% end %>
+                   <% if @student.courses.size < 7 %>
+                        <% (7-@student.courses.size).times do %>
+                        <li></li>
+                        <% end %>
+                   <%end%>
                 </ul>
             </nav>
             <% @student.courses.reverse.each do |course| %>

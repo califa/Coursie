@@ -212,8 +212,7 @@ div.task {
     margin: 0; }
 
 .section_calendar {
-  width: 300px;
-  height: 300px; }
+  width: 300px; }
   .section_calendar table {
     margin: auto; }
   .section_calendar hgroup {
@@ -303,6 +302,8 @@ hgroup h3 {
 
 .section_class_dashboard {
   width: 940px;
+  height: 300px;
+  min-height: 300px;
   margin-bottom: 15px; }
   .section_class_dashboard nav ul.stripelist {
     width: 280px;
@@ -554,11 +555,13 @@ hgroup h3 {
 
 .login_header {
   font: 80pt Arvo, Rockwell;
+  width: 500px;
+  text-align: center;
+  display: block;
   margin: 0 auto;
   color: #b83113;
   text-shadow: #e8e6db 4px 4px;
-  margin-bottom: 50px;
-  margin-left: 20px; }
+  margin-bottom: 30px; }
 
 .login {
   width: 100%; }
